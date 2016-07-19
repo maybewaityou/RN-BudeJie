@@ -6,7 +6,41 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "flux": "^2.1.1",
+    "normalizr": "^2.2.0",
     "react": "15.2.1",
-    "react-native": "0.29.2"
+    "react-dom": "^15.2.1",
+    "react-motion": "^0.4.4",
+    "react-native": "0.29.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.0",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "redux-action": "^1.0.0",
+    "redux-promise": "^0.5.3",
+    "redux-rx": "^0.5.0",
+    "redux-saga": "^0.11.0",
+    "redux-thunk": "^2.1.0",
+    "reflux": "^0.4.1",
+    "reselect": "^2.5.3",
+    "rxjs-es": "^5.0.0-beta.10"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "react-hot-loader": "^1.3.0",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
+    "redux-logger": "^2.6.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   }
 }
