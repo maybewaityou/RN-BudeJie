@@ -11,4 +11,4 @@ import {
 } from 'react-native';
 
 
-AppRegistry.registerComponent('AwesomeReactNativeExample', () => App);
+AppRegistry.registerComponent('rn_hybrid', () => App);
