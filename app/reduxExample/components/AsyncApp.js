@@ -12,7 +12,7 @@ import { add, subtract, delayAdd, delaySubtract } from '../actions/Actions';
 import {
   Text,
   View,
-  TouchableHighlight
+  TouchableOpacity
 } from 'react-native';
 
 class AsyncApp extends Component {
@@ -22,32 +22,32 @@ class AsyncApp extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.buttonLayout}>
-                    <TouchableHighlight style={styles.addButton} onPress={() => {
+                    <TouchableOpacity style={styles.addButton} onPress={() => {
                         dispatch(add(calculate));
                     }}>
-                        <Text>Add</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.subtractButton} onPress={() => {
+                        <Text style={styles.buttonTitle}>++</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.subtractButton} onPress={() => {
                         dispatch(subtract(calculate));
                     }}>
-                        <Text>Subtract</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.delayAddButton} onPress={() => {
+                        <Text style={styles.buttonTitle}>--</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.delayAddButton} onPress={() => {
                         dispatch(delayAdd(calculateDelay, 1000));
                     }}>
-                        <Text>DelayAdd</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight style={styles.delaySubtractButton} onPress={() => {
+                        <Text style={styles.buttonTitle}>Delay ++</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.delaySubtractButton} onPress={() => {
                         dispatch(delaySubtract(calculateDelay, 1000));
                     }}>
-                        <Text>DelaySubtract</Text>
-                    </TouchableHighlight>
+                        <Text style={styles.buttonTitle}>Delay --</Text>
+                    </TouchableOpacity>
                 </View>
-                <View>
-                    <Text>
+                <View style={styles.resultLayout}>
+                    <Text style={styles.resultText}>
                         {calculate}
                     </Text>
-                    <Text>
+                    <Text style={styles.resultText}>
                         {calculateDelay}
                     </Text>
                 </View>
