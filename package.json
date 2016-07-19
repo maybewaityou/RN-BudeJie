@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "server": "./node_modules/react-native/packager/packager.sh start --reset-cache"
   },
   "dependencies": {
     "flux": "^2.1.1",
@@ -11,7 +12,7 @@
     "react": "15.2.1",
     "react-dom": "^15.2.1",
     "react-motion": "^0.4.4",
-    "react-native": "0.29.2",
+    "react-native": "^0.29.2",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.0",
     "react-router-redux": "^4.0.5",
