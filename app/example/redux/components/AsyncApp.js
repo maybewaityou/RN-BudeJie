@@ -25,22 +25,22 @@ class AsyncApp extends Component {
                     <TouchableOpacity style={styles.addButton} onPress={() => {
                         dispatch(add(calculate));
                     }}>
-                        <Text style={styles.buttonTitle}>++</Text>
+                        <Text style={styles.buttonTitle}>Add</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.subtractButton} onPress={() => {
                         dispatch(subtract(calculate));
                     }}>
-                        <Text style={styles.buttonTitle}>--</Text>
+                        <Text style={styles.buttonTitle}>Subtract</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.delayAddButton} onPress={() => {
                         dispatch(delayAdd(calculateDelay, 1000));
                     }}>
-                        <Text style={styles.buttonTitle}>Delay ++</Text>
+                        <Text style={styles.buttonTitle}>Delay +</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.delaySubtractButton} onPress={() => {
                         dispatch(delaySubtract(calculateDelay, 1000));
                     }}>
-                        <Text style={styles.buttonTitle}>Delay --</Text>
+                        <Text style={styles.buttonTitle}>Delay -</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.resultLayout}>
