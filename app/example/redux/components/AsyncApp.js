@@ -6,7 +6,7 @@
  */
 
 import React, { Component, PropTypes } from 'react';
-import styles from '../../styles/Main';
+import styles from '../../../styles/Main';
 import { connect } from 'react-redux';
 import { add, subtract, delayAdd, delaySubtract } from '../actions/Actions';
 import {

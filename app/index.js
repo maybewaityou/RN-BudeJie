@@ -6,7 +6,7 @@
  */
 
 import React, { Component } from 'react';
-import ReduxExample from './reduxExample/reduxExample';
+import ReduxExample from './example/redux/reduxExample';
 
 class App extends Component {
     render() {
