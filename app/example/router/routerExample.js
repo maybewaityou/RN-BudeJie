@@ -39,7 +39,7 @@ class RouterExample extends React.Component {
                 }}
                 backButtonComponent={this.backButtonComponent}
                 headerStyle={{backgroundColor: '#5cafec'}}
-      />
+            />
         );
     }
 }
