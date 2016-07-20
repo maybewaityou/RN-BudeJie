@@ -7,11 +7,12 @@
 
 import React, { Component } from 'react';
 import ReduxExample from './example/redux/reduxExample';
+import RouterExample from './example/router/routerExample';
 
 class App extends Component {
     render() {
         return (
-            <ReduxExample />
+            <RouterExample />
         );
     }
 }
