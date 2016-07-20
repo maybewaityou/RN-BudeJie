@@ -33,9 +33,9 @@ class RouterExample extends React.Component {
         return (
             <Router
                 firstRoute={{
-                  name: 'RootRoute',
-                  component: RootRoute,
-                  leftCorner: this.leftBarComponent,
+                    name: 'RootRoute',
+                    component: RootRoute,
+                    leftCorner: this.leftBarComponent,
                 }}
                 backButtonComponent={this.backButtonComponent}
                 headerStyle={{backgroundColor: '#5cafec'}}
