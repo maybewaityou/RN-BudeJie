@@ -16,6 +16,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.6.0",
     "react-router-redux": "^4.0.5",
+    "react-tween-state": "^0.1.5",
     "redux": "^3.5.2",
     "redux-action": "^1.0.0",
     "redux-promise": "^0.5.3",
