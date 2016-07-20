@@ -6,7 +6,7 @@
  */
 
 import React, { Component, PropTypes } from 'react';
-import styles from '../../styles/Main';
+import styles from '../../styles/Title';
 import Router from 'react-native-simple-router';
 import RootRoute from './components/RootRoute';
 import {
@@ -19,27 +19,13 @@ class RouterExample extends React.Component {
 
     backButtonComponent() {
         return (
-            <Text style={{
-                    color: 'white',
-                    fontSize: 16,
-                    margin: 10,
-                    fontWeight: '600',
-                    textAlign: 'center',
-                    alignItems: 'center',
-                }}>返回</Text>
+            <Text style={styles.titleLeftStyle}>返回</Text>
         );
     }
 
     leftBarComponent() {
         return (
-            <Text style={{
-                    color: 'white',
-                    fontSize: 16,
-                    margin: 10,
-                    fontWeight: '600',
-                    textAlign: 'center',
-                    alignItems: 'center',
-                }}>Left</Text>
+            <Text style={styles.titleLeftStyle}>Left</Text>
         );
     }
 
