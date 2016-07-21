@@ -10,6 +10,10 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
     },
+    commonText: {
+        fontSize: 18,
+        textAlign: 'center'
+    },
     titleLayout: {
         marginTop: 50,
     },
