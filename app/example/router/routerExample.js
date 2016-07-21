@@ -24,14 +24,30 @@ class RouterExample extends React.Component {
         );
     }
 
+    titleBarComponent() {
+        return (
+            <View style={styles.titleLayoutStyle}>
+                <Text style={styles.titleStyle}>RootRoute</Text>
+            </View>
+        );
+    }
+
+    rightBarComponent() {
+        return (
+            <Text style={styles.titleLeftStyle}>right</Text>
+        );
+    }
+
     render() {
         return (
             <Router
                 firstRoute={{
-                    name: 'RootRoute',
                     component: RootRoute,
                     leftCorner: this.leftBarComponent,
+                    titleComponent: this.titleBarComponent,
+                    rightCorner: this.rightBarComponent,
                 }}
+                handleBackAndroid={true}
                 backButtonComponent={this.backButtonComponent}
                 headerStyle={{backgroundColor: '#5cafec'}}
             />

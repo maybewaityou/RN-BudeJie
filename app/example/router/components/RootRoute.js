@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
 
 import React, { Component, PropTypes } from 'react';
-import styles from '../../../styles/Main';
+import styles from '../../../styles/Title';
 import HelloPage from './HelloPage';
 import {
   Text,
@@ -10,9 +10,18 @@ import {
 } from 'react-native';
 
 class RootRoute extends React.Component {
+
+    titleBarComponent() {
+        return (
+            <View style={styles.titleLayoutStyle}>
+                <Text style={styles.titleStyle}>A new screen</Text>
+            </View>
+        );
+    }
+
     nextPage() {
         this.props.toRoute({
-            name: "A new screen",
+            titleComponent: this.titleBarComponent,
             component: HelloPage
         });
     }
