@@ -21,6 +21,11 @@ class AsyncApp extends Component {
         const { dispatch, calculate, calculateDelay } = this.props;
         return (
             <View style={styles.container}>
+                <View style={styles.titleLayout}>
+                    <Text style={styles.title}>
+                        ReduxExample
+                    </Text>
+                </View>
                 <View style={styles.buttonLayout}>
                     <TouchableOpacity style={styles.addButton} onPress={() => {
                         dispatch(add(calculate));
