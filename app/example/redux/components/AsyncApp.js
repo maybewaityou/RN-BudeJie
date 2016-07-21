@@ -1,9 +1,4 @@
 /* jshint esversion: 6 */
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 
 import React, { Component, PropTypes } from 'react';
 import styles from '../../../styles/Main';

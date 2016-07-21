@@ -1,4 +1,5 @@
 /* jshint esversion: 6 */
+
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
