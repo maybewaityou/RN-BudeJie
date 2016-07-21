@@ -8,7 +8,7 @@ import FluxExample from './example/flux/fluxExample';
 class App extends Component {
     render() {
         return (
-            <FluxExample />
+            <RouterExample />
         );
     }
 }
