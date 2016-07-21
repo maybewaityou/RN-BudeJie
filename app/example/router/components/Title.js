@@ -22,7 +22,7 @@ export default title = {
     },
     rightBarComponent: () => {
         return (
-            <Text style={styles.titleLeftStyle}>right</Text>
+            <Text style={styles.titleRightStyle}>Right</Text>
         );
     }
 };
