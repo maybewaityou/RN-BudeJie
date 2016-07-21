@@ -6,7 +6,7 @@ import {
     NativeModules,
     Text,
     View,
-    TouchableHighlight
+    TouchableOpacity
 } from 'react-native';
 
 class CustomExample extends React.Component {
@@ -27,10 +27,10 @@ class CustomExample extends React.Component {
     render() {
         return (
             <View style={[styles.container, { justifyContent: 'center' }]}>
-                <TouchableHighlight onPress={this.onPress.bind(this)}>
+                <TouchableOpacity style={{width: 100, height: 44}} onPress={this.onPress.bind(this)}>
                     <Text style={styles.commonText}>Add</Text>
-                </TouchableHighlight>
-                <Text>
+                </TouchableOpacity>
+                <Text style={styles.commonText}>
                     {this.state.text}
                 </Text>
             </View>
