@@ -21,22 +21,20 @@ export default StyleSheet.create({
     titleLeftStyle: {
         color: 'white',
         fontSize: 16,
-        padding: 10,
+        margin: 10,
         fontWeight: '600',
         textAlign: 'center',
-        alignItems: 'center',
         backgroundColor: 'green'
     },
     titleRightStyle: {
         color: 'white',
         fontSize: 16,
-        padding: 10,
+        margin: 10,
         fontWeight: '600',
         textAlign: 'center',
-        alignItems: 'center',
         position: 'absolute',
         right: 10,
-        bottom: -20,
+        bottom: -10,
         backgroundColor: 'green'
     },
 });
