@@ -15,7 +15,6 @@ export default StyleSheet.create({
         fontWeight: '600',
         textAlign: 'center',
         alignItems: 'center',
-        backgroundColor: 'red'
     },
     titleLeftStyle: {
         color: 'white',

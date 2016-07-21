@@ -4,6 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import styles from '../../styles/Title';
 import Router from 'react-native-simple-router';
 import RootRoute from './components/RootRoute';
+import title from './components/Title';
 import {
   Text,
   View,
@@ -18,34 +19,14 @@ class RouterExample extends React.Component {
         );
     }
 
-    leftBarComponent() {
-        return (
-            <Text style={styles.titleLeftStyle}>Left</Text>
-        );
-    }
-
-    titleBarComponent() {
-        return (
-            <View style={styles.titleLayoutStyle}>
-                <Text style={styles.titleStyle}>RootRoute</Text>
-            </View>
-        );
-    }
-
-    rightBarComponent() {
-        return (
-            <Text style={styles.titleLeftStyle}>right</Text>
-        );
-    }
-
     render() {
         return (
             <Router
                 firstRoute={{
                     component: RootRoute,
-                    leftCorner: this.leftBarComponent,
-                    titleComponent: this.titleBarComponent,
-                    rightCorner: this.rightBarComponent,
+                    leftCorner: title.leftBarComponent,
+                    titleComponent: title.titleBarComponent,
+                    rightCorner: title.rightBarComponent,
                 }}
                 handleBackAndroid={true}
                 backButtonComponent={this.backButtonComponent}
