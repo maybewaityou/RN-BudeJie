@@ -12,9 +12,14 @@ import {
 export default StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#F5FCFF',
+    },
+    titleLayout: {
+        marginTop: 50,
+    },
+    title: {
+        fontSize: 24
     },
     resultLayout: {
         flexDirection: 'row',

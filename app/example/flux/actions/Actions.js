@@ -2,7 +2,7 @@
 
 import Dispatcher from '../dispatcher/Dispatcher';
 
-let TodoActions = {
+let Actions = {
     create: (text) => {
         Dispatcher.dispatch({
             actionType: 'create',
@@ -18,4 +18,4 @@ let TodoActions = {
     },
 };
 
-export default TodoActions;
+export default Actions;
