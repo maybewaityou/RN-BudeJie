@@ -6,7 +6,7 @@ import {
 
 export default StyleSheet.create({
     titleLayoutStyle: {
-        backgroundColor: 'red'
+
     },
     titleStyle: {
         color: 'white',
@@ -16,7 +16,6 @@ export default StyleSheet.create({
         justifyContent: 'center',
         textAlign: 'center',
         alignItems: 'center',
-        backgroundColor: 'blue'
     },
     titleLeftStyle: {
         color: 'white',
@@ -24,7 +23,6 @@ export default StyleSheet.create({
         margin: 10,
         fontWeight: '600',
         textAlign: 'center',
-        backgroundColor: 'green'
     },
     titleRightStyle: {
         color: 'white',
@@ -35,6 +33,5 @@ export default StyleSheet.create({
         position: 'absolute',
         right: 10,
         bottom: -10,
-        backgroundColor: 'green'
     },
 });
