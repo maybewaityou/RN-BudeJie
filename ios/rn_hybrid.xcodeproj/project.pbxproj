@@ -23,6 +23,8 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		60B63B771D40C6C4001C1FBB /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B761D40C6C4001C1FBB /* CustomModule.m */; };
+		60B63B7A1D40C8C3001C1FBB /* CustomSwiftModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B791D40C8C3001C1FBB /* CustomSwiftModule.swift */; };
+		60B63B7D1D40C989001C1FBB /* CustomSwiftModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B7C1D40C989001C1FBB /* CustomSwiftModule.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +130,9 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		60B63B751D40C6C4001C1FBB /* CustomModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomModule.h; sourceTree = "<group>"; };
 		60B63B761D40C6C4001C1FBB /* CustomModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
+		60B63B781D40C8C3001C1FBB /* rn_hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rn_hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
+		60B63B791D40C8C3001C1FBB /* CustomSwiftModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwiftModule.swift; sourceTree = "<group>"; };
+		60B63B7C1D40C989001C1FBB /* CustomSwiftModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSwiftModule.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +267,9 @@
 			children = (
 				60B63B751D40C6C4001C1FBB /* CustomModule.h */,
 				60B63B761D40C6C4001C1FBB /* CustomModule.m */,
+				60B63B791D40C8C3001C1FBB /* CustomSwiftModule.swift */,
+				60B63B7C1D40C989001C1FBB /* CustomSwiftModule.m */,
+				60B63B781D40C8C3001C1FBB /* rn_hybrid-Bridging-Header.h */,
 			);
 			path = CustomModules;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
@@ -557,6 +566,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B63B7A1D40C8C3001C1FBB /* CustomSwiftModule.swift in Sources */,
+				60B63B7D1D40C989001C1FBB /* CustomSwiftModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				60B63B771D40C6C4001C1FBB /* CustomModule.m in Sources */,
@@ -619,6 +630,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -633,6 +645,8 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = rn_hybrid;
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomModules/rn_hybrid-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -640,6 +654,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -653,6 +668,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = rn_hybrid;
+				SWIFT_OBJC_BRIDGING_HEADER = "CustomModules/rn_hybrid-Bridging-Header.h";
 			};
 			name = Release;
 		};

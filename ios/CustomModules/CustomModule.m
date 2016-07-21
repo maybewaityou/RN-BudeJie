@@ -12,7 +12,7 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(call:(NSString *)input :(RCTResponseSenderBlock)callback)
+RCT_EXPORT_METHOD(call:(NSString *)input callback:(RCTResponseSenderBlock)callback)
 {
   NSLog(@"===>>> %@",input);
   callback(@[@"mu ha ha ~"]);
