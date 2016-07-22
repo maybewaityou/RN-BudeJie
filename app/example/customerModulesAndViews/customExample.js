@@ -7,7 +7,7 @@ class CustomExample extends React.Component {
 
     render() {
         return (
-            <CustomApp />
+            <CustomModuleApp />
         );
     }
 }
