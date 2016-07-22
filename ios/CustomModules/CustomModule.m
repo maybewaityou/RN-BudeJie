@@ -20,7 +20,7 @@ RCT_EXPORT_METHOD(call:(NSString *)input callback:(RCTResponseSenderBlock)callba
 
 RCT_EXPORT_METHOD(jumpToNative:(RCTResponseSenderBlock)callback)
 {
-  
+  callback(@[@"mu ha ha ~"]);
 }
 
 @end

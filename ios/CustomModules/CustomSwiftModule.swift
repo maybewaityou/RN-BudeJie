@@ -17,6 +17,7 @@ class CustomSwiftModule: NSObject {
   }
   
   @objc func jumpToNative(callback: RCTResponseSenderBlock) {
+    let navController = UINavigationController.init(rootViewController: NativeController.init())
     
   }
 }
