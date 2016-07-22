@@ -9,7 +9,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-class CustomExample extends React.Component {
+class CustomModuleApp extends React.Component {
     constructor(props) {
         super(props);
 
@@ -41,4 +41,4 @@ class CustomExample extends React.Component {
     }
 }
 
-export default CustomExample;
+export default CustomModuleApp;
