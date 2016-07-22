@@ -9,7 +9,7 @@ import CustomExample from './example/customerModulesAndViews/customExample';
 class App extends Component {
     render() {
         return (
-            <CustomExample />
+            <RouterExample />
         );
     }
 }
