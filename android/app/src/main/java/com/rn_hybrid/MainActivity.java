@@ -3,6 +3,7 @@ package com.rn_hybrid;
 import android.content.Intent;
 
 import com.facebook.react.ReactActivity;
+import io.realm.react.RealmReactPackage;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
