@@ -12,4 +12,6 @@
 
 RCT_EXTERN_METHOD(call:(NSString *)name callback:(RCTResponseSenderBlock)callback)
 
+RCT_EXTERN_METHOD(jumpToNative:(RCTResponseSenderBlock)callback)
+
 @end

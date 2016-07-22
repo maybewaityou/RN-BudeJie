@@ -18,4 +18,9 @@ RCT_EXPORT_METHOD(call:(NSString *)input callback:(RCTResponseSenderBlock)callba
   callback(@[@"mu ha ha ~"]);
 }
 
+RCT_EXPORT_METHOD(jumpToNative:(RCTResponseSenderBlock)callback)
+{
+  
+}
+
 @end

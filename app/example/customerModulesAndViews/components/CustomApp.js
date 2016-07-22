@@ -19,7 +19,10 @@ class CustomExample extends React.Component {
     }
 
     onPress() {
-        NativeModules.CustomModule.call(this.state.text, (text) => {
+        // NativeModules.CustomModule.call(this.state.text, (text) => {
+        //     this.setState({text});
+        // });
+        NativeModules.CustomModule.jumpToNative((text) => {
             this.setState({text});
         });
     }

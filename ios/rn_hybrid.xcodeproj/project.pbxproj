@@ -22,6 +22,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		60ADB6B41D41AD7E00A2280D /* NativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADB6B31D41AD7E00A2280D /* NativeController.swift */; };
 		60B63B771D40C6C4001C1FBB /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B761D40C6C4001C1FBB /* CustomModule.m */; };
 		60B63B7A1D40C8C3001C1FBB /* CustomSwiftModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B791D40C8C3001C1FBB /* CustomSwiftModule.swift */; };
 		60B63B7D1D40C989001C1FBB /* CustomSwiftModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B7C1D40C989001C1FBB /* CustomSwiftModule.m */; };
@@ -128,6 +129,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rn_hybrid/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = rn_hybrid/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		60ADB6B31D41AD7E00A2280D /* NativeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeController.swift; sourceTree = "<group>"; };
 		60B63B751D40C6C4001C1FBB /* CustomModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomModule.h; sourceTree = "<group>"; };
 		60B63B761D40C6C4001C1FBB /* CustomModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
 		60B63B781D40C8C3001C1FBB /* rn_hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rn_hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -262,9 +264,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		60ADB6B21D41AC6200A2280D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60ADB6B31D41AD7E00A2280D /* NativeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		60B63B6A1D40C531001C1FBB /* CustomModules */ = {
 			isa = PBXGroup;
 			children = (
+				60ADB6B21D41AC6200A2280D /* Controller */,
 				60B63B751D40C6C4001C1FBB /* CustomModule.h */,
 				60B63B761D40C6C4001C1FBB /* CustomModule.m */,
 				60B63B791D40C8C3001C1FBB /* CustomSwiftModule.swift */,
@@ -570,6 +581,7 @@
 				60B63B7D1D40C989001C1FBB /* CustomSwiftModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				60ADB6B41D41AD7E00A2280D /* NativeController.swift in Sources */,
 				60B63B771D40C6C4001C1FBB /* CustomModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

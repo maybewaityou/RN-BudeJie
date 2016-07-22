@@ -11,9 +11,12 @@ import UIKit
 @objc(CustomSwiftModule)
 class CustomSwiftModule: NSObject {
 
-  @objc func call(input: String, callback: RCTResponseSenderBlock) -> Void {
+  @objc func call(input: String, callback: RCTResponseSenderBlock) {
     print("=====>>> \(input)")
     callback(["mu ha ha ~"])
   }
   
+  @objc func jumpToNative(callback: RCTResponseSenderBlock) {
+    
+  }
 }
