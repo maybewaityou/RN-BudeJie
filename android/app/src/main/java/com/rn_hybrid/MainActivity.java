@@ -7,7 +7,7 @@ import com.facebook.react.ReactActivity;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class MainActivity extends ReactActivity {
-    //构建一个阻塞的单一数据的队列
+    // 构建一个阻塞的单一数据的队列
     public static ArrayBlockingQueue<String> mQueue = new ArrayBlockingQueue<>(1);
 
     /**
