@@ -3,14 +3,6 @@
 
 import Dispatcher from '../dispatcher/Dispatcher';
 
-/* ============================= Action Type Start =============================== */
-const DEFAULT = 'DEFAULT';
-const ADD = 'ADD';
-const SUBTRACT = 'SUBTRACT';
-const DELAY_ADD = 'DELAY_ADD';
-const DELAY_SUBTRACT = 'DELAY_SUBTRACT';
-/* ============================= Action Type End =============================== */
-
 let Actions = {
     create: (text) => {
         Dispatcher.dispatch({
@@ -18,16 +10,10 @@ let Actions = {
             text: text,
         });
     },
-    add: (item) => {
+    action: (actionType, payload) => {
         Dispatcher.dispatch({
-            type: ADD,
-            item: item + 1,
-        });
-    },
-    subtract: (item) => {
-        Dispatcher.dispatch({
-            type: ADD,
-            item: item - 1,
+            type: actionType,
+            payload: payload,
         });
     },
     updateText: (id, text) => {

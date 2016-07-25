@@ -4,6 +4,14 @@ import Dispatcher from '../dispatcher/Dispatcher';
 import { EventEmitter } from 'events';
 import assign from 'object-assign';
 
+/* ============================= Action Type Start =============================== */
+const DEFAULT = 'DEFAULT';
+const ADD = 'ADD';
+const SUBTRACT = 'SUBTRACT';
+const DELAY_ADD = 'DELAY_ADD';
+const DELAY_SUBTRACT = 'DELAY_SUBTRACT';
+/* ============================= Action Type End =============================== */
+
 var CHANGE_EVENT = 'change';
 
 var _todos = {};
