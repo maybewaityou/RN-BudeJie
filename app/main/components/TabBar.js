@@ -28,7 +28,7 @@ class TabBar extends React.Component {
                 >
                 <TabBarIOS.Item
                     title={LocalString.tabBarEssence}
-                    icon={Images.tabBarEssenceUnselectedIcon}
+                    icon={Images.tabBarEssenceIcon}
                     selectedIcon={Images.tabBarEssenceSelectedIcon}
                     selected={this.state.selectedTab === 'essence'}
                     onPress={() => {
