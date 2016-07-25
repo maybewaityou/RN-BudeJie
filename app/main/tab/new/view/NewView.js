@@ -15,7 +15,7 @@ class NewView extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'blue'}}>
+            <View style={{ flex: 1}}>
 
             </View>
         );
