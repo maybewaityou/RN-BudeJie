@@ -6,6 +6,8 @@ import Constant from '../constant/Constant';
 import Color from '../constant/Color';
 import Images from '../constant/Images';
 import LocalString from '../constant/LocalString';
+import Router from './Router';
+import Title from './title/Title';
 import EssenceContainer from '../tab/essence/container/EssenceContainer';
 import FriendTrendsContainer from '../tab/friendTrends/container/FriendTrendsContainer';
 import MeContainer from '../tab/me/container/MeContainer';
@@ -40,7 +42,10 @@ class TabBar extends React.Component {
                         this.setState({ selectedTab: 'essence' });
                     }}
                 >
-                    <EssenceContainer />
+                    <Router
+                        route={EssenceContainer}
+                        title={Title}
+                    />
                 </TabBarIOS.Item>
 
                 {/* 新帖 */}
