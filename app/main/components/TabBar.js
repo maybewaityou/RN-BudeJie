@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import styles from '../../styles/Main';
+import Constant from '../constant/Constant';
 import Color from '../constant/Color';
 import Images from '../constant/Images';
 import LocalString from '../constant/LocalString';
@@ -33,8 +34,8 @@ class TabBar extends React.Component {
                 {/* 精华 */}
                 <TabBarIOS.Item
                     title={LocalString.tabBarEssence}
-                    icon={Images.tabBarEssenceIcon}
-                    selectedIcon={Images.tabBarEssenceSelectedIcon}
+                    icon={{ uri: Images.tabBarEssenceIcon, scale: Constant.tabBarDefaultScale }}
+                    selectedIcon={{ uri: Images.tabBarEssenceSelectedIcon, scale: Constant.tabBarDefaultScale }}
                     selected={this.state.selectedTab === 'essence'}
                     onPress={() => {
                         this.setState({ selectedTab: 'essence' });
@@ -46,8 +47,8 @@ class TabBar extends React.Component {
                 {/* 新帖 */}
                 <TabBarIOS.Item
                     title={LocalString.tabBarNew}
-                    icon={Images.tabBarNewIcon}
-                    selectedIcon={Images.tabBarNewSelectedIcon}
+                    icon={{ uri: Images.tabBarNewIcon, scale: Constant.tabBarDefaultScale }}
+                    selectedIcon={{ uri: Images.tabBarNewSelectedIcon, scale: Constant.tabBarDefaultScale }}
                     selected={this.state.selectedTab === 'new'}
                     onPress={() => {
                         this.setState({ selectedTab: 'new' });
@@ -59,8 +60,8 @@ class TabBar extends React.Component {
                 {/* 关注 */}
                 <TabBarIOS.Item
                     title={LocalString.tabBarFriendTrends}
-                    icon={Images.tabBarFriendTrendsIcon}
-                    selectedIcon={Images.tabBarFriendTrendsSelectedIcon}
+                    icon={{ uri: Images.tabBarFriendTrendsIcon, scale: Constant.tabBarDefaultScale }}
+                    selectedIcon={{ uri: Images.tabBarFriendTrendsSelectedIcon, scale: Constant.tabBarDefaultScale }}
                     selected={this.state.selectedTab === 'friendTrends'}
                     onPress={() => {
                         this.setState({ selectedTab: 'friendTrends' });
@@ -72,8 +73,8 @@ class TabBar extends React.Component {
                 {/* 我 */}
                 <TabBarIOS.Item
                     title={LocalString.tabBarMe}
-                    icon={Images.tabBarMeIcon}
-                    selectedIcon={Images.tabBarMeSelectedIcon}
+                    icon={{ uri: Images.tabBarMeIcon, scale: Constant.tabBarDefaultScale }}
+                    selectedIcon={{ uri: Images.tabBarMeSelectedIcon, scale: Constant.tabBarDefaultScale }}
                     selected={this.state.selectedTab === 'me'}
                     onPress={() => {
                         this.setState({ selectedTab: 'me' });
