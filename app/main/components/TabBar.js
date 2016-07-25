@@ -2,7 +2,10 @@
 
 import React, { Component } from 'react';
 import styles from '../../styles/Main';
-import { Color, Images, LocalString } from '../constant/Constant';
+import Color from '../constant/Color';
+import Images from '../constant/Images';
+import LocalString from '../constant/LocalString';
+
 import EssenceContainer from '../tab/essence/container/EssenceContainer';
 import {
     TabBarIOS,
