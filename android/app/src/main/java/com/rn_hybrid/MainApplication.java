@@ -20,7 +20,7 @@ public class MainApplication extends Application implements ReactApplication {
 
     @Override
     protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
+      return Arrays.asList(
           new MainReactPackage(),
           new ModulesReactPackage()
       );

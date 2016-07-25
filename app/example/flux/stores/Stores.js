@@ -3,30 +3,32 @@
 import Dispatcher from '../dispatcher/Dispatcher';
 import { EventEmitter } from 'events';
 import assign from 'object-assign';
-
-/* ============================= Action Type Start =============================== */
-const DEFAULT = 'DEFAULT';
-const ADD = 'ADD';
-const SUBTRACT = 'SUBTRACT';
-const DELAY_ADD = 'DELAY_ADD';
-const DELAY_SUBTRACT = 'DELAY_SUBTRACT';
-/* ============================= Action Type End =============================== */
+import { ADD, SUBTRACT } from '../actions/ActionsType';
 
 var CHANGE_EVENT = 'change';
 
-var _todos = {};
-var id = 0;
-function create(text) {
-  _todos[id] = {
-    id: id,
-    complete: false,
-    text: text
-  };
-  id ++;
+var _payload = {
+    item: 0
+};
+
+function add(payload = {
+    item: 0
+}) {
+    _payload = {
+        ...payload,
+        item: payload.item + 1
+    };
+    return _payload;
 }
 
-function update(id, updates) {
-  _todos[id] = assign({}, _todos[id], updates);
+function subtract(payload = {
+    item: 0
+}) {
+    _payload = {
+        ...payload,
+        item: payload.item - 1
+    };
+    return _payload;
 }
 
 let Store = assign({}, EventEmitter.prototype, {
@@ -35,8 +37,8 @@ let Store = assign({}, EventEmitter.prototype, {
      * Get the entire collection of TODOs.
      * @return {object}
      */
-    getAll: function() {
-      return _todos;
+    getPayload: function() {
+      return _payload;
     },
 
     emitChange: function() {
@@ -60,20 +62,14 @@ let Store = assign({}, EventEmitter.prototype, {
 
 Dispatcher.register((action) => {
     var text;
-    switch(action.actionType) {
-        case 'create':
-            text = action.text.trim();
-            if (text !== '') {
-                create(text);
-                Store.emitChange();
-            }
+    switch(action.type) {
+        case ADD:
+            add(action.payload);
+            Store.emitChange();
         break;
-        case 'updateText':
-            text = action.text.trim();
-            if (text !== '') {
-                update(action.id, {text: text});
-                Store.emitChange();
-            }
+        case SUBTRACT:
+            subtract(action.payload);
+            Store.emitChange();
         break;
         default:
         break;

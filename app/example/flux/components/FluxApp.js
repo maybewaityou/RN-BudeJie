@@ -5,21 +5,21 @@ import Store from '../stores/Stores';
 import Actions from '../actions/Actions';
 import MainSection from './MainSection';
 
-function getTodoState() {
+function getItem() {
     return {
-        allTodos: Store.getAll(),
+        item: Store.getPayload().item,
     };
 }
 
 class FluxApp extends Component {
     constructor(props) {
         super(props);
-        Actions.create('Hello');
-        this.state = getTodoState();
+        
+        this.state = getItem();
     }
 
     _onChange() {
-        this.setState(getTodoState());
+        this.setState(getItem());
     }
 
     componentDidMount() {
@@ -32,7 +32,7 @@ class FluxApp extends Component {
 
     render() {
         return (
-            <MainSection allTodos={this.state.allTodos}/>
+            <MainSection item={this.state.item}/>
         );
     }
 }

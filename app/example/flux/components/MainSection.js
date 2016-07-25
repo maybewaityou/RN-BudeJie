@@ -3,13 +3,12 @@
 import React, {Component} from 'react';
 import styles from '../../../styles/Main';
 import Actions from '../actions/Actions';
+import { ADD, SUBTRACT } from '../actions/ActionsType';
 import {
     View,
     Text,
     TouchableOpacity
 } from 'react-native';
-
-var count = 0;
 
 class MainSection extends Component {
     render() {
@@ -22,32 +21,40 @@ class MainSection extends Component {
                 </View>
                 <View style={styles.buttonLayout}>
                     <TouchableOpacity style={styles.addButton} onPress={() => {
-                        Actions.updateText(0, `${++count}`);
+                        Actions.action(ADD, {
+                            item: this.props.item
+                        });
                     }}>
                         <Text style={styles.buttonTitle}>Add</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.subtractButton} onPress={() => {
-                        Actions.updateText(0, `${--count}`);
+                        Actions.action(SUBTRACT, {
+                            item: this.props.item
+                        });
                     }}>
                         <Text style={styles.buttonTitle}>Subtract</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.delayAddButton} onPress={() => {
-                        Actions.updateText(0, `${++count}`);
+                        Actions.action(ADD, {
+                            item: this.props.item
+                        });
                     }}>
                         <Text style={styles.buttonTitle}>Delay +</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.delaySubtractButton} onPress={() => {
-                        Actions.updateText(0, `${--count}`);
+                        Actions.action(SUBTRACT, {
+                            item: this.props.item
+                        });
                     }}>
                         <Text style={styles.buttonTitle}>Delay -</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.resultLayout}>
                     <Text style={styles.resultText}>
-                        {this.props.allTodos[0].text}
+                        {this.props.item}
                     </Text>
                     <Text style={styles.resultText}>
-                        {this.props.allTodos[0].text}
+                        {this.props.item}
                     </Text>
                 </View>
             </View>
