@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import styles from '../../styles/Main';
 import { Color, Images, LocalString } from '../constant/Constant';
-
+import EssenceContainer from '../tab/essence/container/EssenceContainer';
 import {
     TabBarIOS,
     View,
@@ -35,7 +35,7 @@ class TabBar extends React.Component {
                         this.setState({ selectedTab: 'essence' });
                     }}
                 >
-
+                    <EssenceContainer />
                 </TabBarIOS.Item>
 
             </TabBarIOS>
