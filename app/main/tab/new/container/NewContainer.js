@@ -2,11 +2,9 @@
 
 import React from 'react';
 import styles from '../../../../styles/Main';
-import {
-    View
-} from 'react-native';
+import NewView from '../view/NewView';
 
-class EssenceView extends React.Component {
+class NewContainer extends React.Component {
     constructor(props) {
         super(props);
 
@@ -15,11 +13,9 @@ class EssenceView extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: '#000'}}>
-
-            </View>
+            <NewView />
         );
     }
 }
 
-export default EssenceView;
+export default NewContainer;

@@ -6,7 +6,7 @@ import {
     View
 } from 'react-native';
 
-class EssenceView extends React.Component {
+class MeView extends React.Component {
     constructor(props) {
         super(props);
 
@@ -15,11 +15,11 @@ class EssenceView extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: '#000'}}>
+            <View style={{ flex: 1, backgroundColor: 'green'}}>
 
             </View>
         );
     }
 }
 
-export default EssenceView;
+export default MeView;
