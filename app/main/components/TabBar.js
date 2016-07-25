@@ -11,9 +11,7 @@ import FriendTrendsContainer from '../tab/friendTrends/container/FriendTrendsCon
 import MeContainer from '../tab/me/container/MeContainer';
 import NewContainer from '../tab/new/container/NewContainer';
 import {
-    TabBarIOS,
-    View,
-    Text
+    TabBarIOS
 } from 'react-native';
 
 class TabBar extends React.Component {
