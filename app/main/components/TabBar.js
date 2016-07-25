@@ -28,7 +28,7 @@ class TabBar extends React.Component {
             <TabBarIOS
                 tintColor={Color.tabBarSelectedColor}
                 translucent={true}
-                >
+            >
 
                 {/* 精华 */}
                 <TabBarIOS.Item
