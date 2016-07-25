@@ -2,7 +2,8 @@
 
 import React, { Component } from 'react';
 import styles from '../../styles/Main';
-import Color from '../constant/Constant';
+import { Color, Images, LocalString } from '../constant/Constant';
+
 import {
     TabBarIOS,
     View,
@@ -12,6 +13,10 @@ import {
 class TabBar extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            selectedTab: 'essence'
+        };
     }
 
     render() {
@@ -22,8 +27,14 @@ class TabBar extends React.Component {
                 translucent={true}
                 >
                 <TabBarIOS.Item
-                    
-                    >
+                    title={LocalString.tabBarEssence}
+                    icon={Images.tabBarEssenceUnselectedIcon}
+                    selectedIcon={Images.tabBarEssenceSelectedIcon}
+                    selected={this.state.selectedTab === 'essence'}
+                    onPress={() => {
+                        this.setState({ selectedTab: 'essence' });
+                    }}
+                >
 
                 </TabBarIOS.Item>
 
