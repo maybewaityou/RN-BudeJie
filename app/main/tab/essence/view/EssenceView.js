@@ -15,7 +15,7 @@ class EssenceView extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1}}>
+            <View style={{ flex: 1 }}>
 
             </View>
         );

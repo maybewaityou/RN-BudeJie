@@ -27,7 +27,6 @@ class TabBar extends React.Component {
     render() {
         return (
             <TabBarIOS
-                barTintColor={Color.tabBarBackgroundColor}
                 tintColor={Color.tabBarSelectedColor}
                 translucent={true}
                 >
