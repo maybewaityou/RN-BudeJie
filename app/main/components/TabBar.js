@@ -1,6 +1,8 @@
 /* jshint esversion: 6 */
 
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import configureStore from '../../framework/redux/store/Store';
 import styles from '../../styles/Main';
 import Constant from '../constant/Constant';
 import Color from '../constant/Color';
@@ -13,6 +15,8 @@ import NewContainer from '../tab/new/container/NewContainer';
 import {
     TabBarIOS
 } from 'react-native';
+
+var store = configureStore();
 
 class TabBar extends React.Component {
     constructor(props) {
@@ -40,7 +44,9 @@ class TabBar extends React.Component {
                         this.setState({ selectedTab: 'essence' });
                     }}
                 >
-                    <EssenceContainer />
+                    <Provider store={store}>
+                        <EssenceContainer />
+                    </Provider>
                 </TabBarIOS.Item>
 
                 {/* 新帖 */}
@@ -53,7 +59,9 @@ class TabBar extends React.Component {
                         this.setState({ selectedTab: 'new' });
                     }}
                 >
-                    <NewContainer />
+                    <Provider store={store}>
+                        <NewContainer />
+                    </Provider>
                 </TabBarIOS.Item>
 
                 {/* 关注 */}
@@ -66,7 +74,9 @@ class TabBar extends React.Component {
                         this.setState({ selectedTab: 'friendTrends' });
                     }}
                 >
-                    <FriendTrendsContainer />
+                    <Provider store={store}>
+                        <FriendTrendsContainer />
+                    </Provider>
                 </TabBarIOS.Item>
 
                 {/* 我 */}
@@ -79,7 +89,9 @@ class TabBar extends React.Component {
                         this.setState({ selectedTab: 'me' });
                     }}
                 >
-                    <MeContainer />
+                    <Provider store={store}>
+                        <MeContainer />
+                    </Provider>
                 </TabBarIOS.Item>
             </TabBarIOS>
         );

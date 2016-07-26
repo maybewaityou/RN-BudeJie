@@ -18,7 +18,7 @@ class LoginComponent extends React.Component {
         return (
             <View style={styles.container}>
                 <Text onPress={this.props.close}>
-                    a;ksjdk;lasjdk;lasdja;lsdkj
+                    dismiss
                 </Text>
             </View>
         );

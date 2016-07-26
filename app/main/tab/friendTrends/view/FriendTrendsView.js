@@ -13,34 +13,16 @@ import {
 } from 'react-native';
 
 class FriendTrendsView extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            animationType: 'slide',
-            modalVisible: false,
-            transparent: false,
-        };
-    }
-
-    onPress() {
-        this.setState({modalVisible: true});
-    }
-
-    close() {
-        this.setState({modalVisible: false});
-    }
-
     render() {
         return (
             <View style={styles.container}>
                 <Modal
-                    animationType={this.state.animationType}
-                    transparent={this.state.transparent}
-                    visible={this.state.modalVisible}
+                    animationType={this.props.animationType}
+                    transparent={this.props.transparent}
+                    visible={this.props.modalVisible}
                 >
                     <LoginComponent
-                        close={this.close.bind(this)}
+                        close={this.props.dismiss}
                     />
                 </Modal>
                 <Image source={{uri: Images.headerCryIcon}} style={{ width: 48, height: 48, marginBottom: 10 }}/>
@@ -56,7 +38,7 @@ class FriendTrendsView extends React.Component {
                     </Text>
                 </View>
                 <LoginButton
-                    onPress={this.onPress.bind(this)}
+                    onPress={this.props.onPress}
                 />
             </View>
         );

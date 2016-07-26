@@ -1,22 +1,37 @@
 /* jshint esversion: 6 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { modal, dismiss } from '../../../../framework/redux/actions/Actions';
+import { MODAL, DISMISS } from '../../../../framework/redux/actions/ActionsType';
 import styles from '../../../../styles/Main';
 import Router from '../../../components/Router';
 import { TitleFriendTrendsLeftComponent, BackButtonComponent, TitleBarFriendTrendsComponent } from '../../../components/title/Title';
 import FriendTrendsView from '../view/FriendTrendsView';
 
 class FriendTrendsContainer extends React.Component {
-    constructor(props) {
-        super(props);
 
-
+    initFriendTrendsView() {
+        const { dispatch, modalVisible } = this.props;
+        return (
+            <FriendTrendsView
+                animationType='slide'
+                transparent={false}
+                modalVisible={modalVisible}
+                onPress={() => {
+                    dispatch(modal(true));
+                }}
+                dismiss={() => {
+                    dispatch(dismiss(false));
+                }}
+            />
+        );
     }
 
     render() {
         return (
             <Router
-                route={FriendTrendsView}
+                route={this.initFriendTrendsView.bind(this)}
                 backButtonComponent={BackButtonComponent}
                 leftBarComponent={TitleFriendTrendsLeftComponent}
                 titleBarComponent={TitleBarFriendTrendsComponent}
@@ -25,4 +40,16 @@ class FriendTrendsContainer extends React.Component {
     }
 }
 
-export default FriendTrendsContainer;
+FriendTrendsContainer.propTypes = {
+    modalVisible: PropTypes.bool,
+    dispatch: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state) {
+    const { friendTrendsReducer } = state;
+    return {
+        modalVisible: friendTrendsReducer.modalVisible
+    };
+}
+
+export default connect(mapStateToProps)(FriendTrendsContainer);
