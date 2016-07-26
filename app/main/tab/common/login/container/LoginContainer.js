@@ -2,8 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { login, qqLogin, sinaLogin, tecentLogin, goToRegister } from '../../../../../framework/redux/actions/Actions';
-import { MODAL, DISMISS, CAN_FOCUS } from '../../../../../framework/redux/actions/ActionsType';
+import { login, qqLogin, sinaLogin, tecentLogin, goToRegister, dismiss } from '../../../../../framework/redux/actions/Actions';
 import styles from '../../../../../styles/Main';
 import Images from '../../../../constant/Images';
 import LoginView from '../view/LoginView';

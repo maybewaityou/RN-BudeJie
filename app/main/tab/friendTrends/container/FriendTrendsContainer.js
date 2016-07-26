@@ -3,7 +3,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { modal, dismiss, weatherCanFocus } from '../../../../framework/redux/actions/Actions';
-import { MODAL, DISMISS, CAN_FOCUS } from '../../../../framework/redux/actions/ActionsType';
 import styles from '../../../../styles/Main';
 import Router from '../../../components/Router';
 import { TitleFriendTrendsLeftComponent, BackButtonComponent, TitleBarFriendTrendsComponent } from '../../../components/title/Title';
