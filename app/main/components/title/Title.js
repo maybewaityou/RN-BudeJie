@@ -10,12 +10,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export class TitleTagLeftComponent extends React.Component {
+
+class TitleLeftImage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            image: Images.titleEssenceLeftIcon
+            image: this.props.image
         };
     }
 
@@ -26,14 +27,37 @@ export class TitleTagLeftComponent extends React.Component {
                 style={styles.titleBackLayout}
                 onPress={this.props.onPress}
                 onPressIn={() => {
-                    this.setState({image: Images.titleEssenceLeftClickedIcon});
+                    this.setState({image: this.props.clickedImage});
                 }}
                 onPressOut={() => {
-                    this.setState({image: Images.titleEssenceLeftIcon});
+                    this.setState({image: this.props.image});
                 }}
             >
                 <Image source={{uri: this.state.image}} style={{ width: 18, height: 15 }}/>
             </TouchableOpacity>
+        );
+    }
+}
+
+/*=================================== Export Start =========================================*/
+export class TitleTagLeftComponent extends React.Component {
+    render() {
+        return (
+            <TitleLeftImage
+                image={Images.titleEssenceLeftClickedIcon}
+                clickedImage={Images.titleEssenceLeftIcon}
+            />
+        );
+    }
+}
+
+export class TitleTagLeftComponent extends React.Component {
+    render() {
+        return (
+            <TitleLeftImage
+                image={Images.titleEssenceLeftClickedIcon}
+                clickedImage={Images.titleEssenceLeftIcon}
+            />
         );
     }
 }

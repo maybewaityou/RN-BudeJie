@@ -2,6 +2,8 @@
 
 import React from 'react';
 import styles from '../../../../styles/Main';
+import Router from '../../../components/Router';
+import { TitleTagLeftComponent, BackButtonComponent, TitleBarComponent, TitleImageComponent, RightBarComponent } from '../../../components/title/Title';
 import FriendTrendsView from '../view/FriendTrendsView';
 
 class FriendTrendsContainer extends React.Component {
@@ -13,7 +15,12 @@ class FriendTrendsContainer extends React.Component {
 
     render() {
         return (
-            <FriendTrendsView />
+            <Router
+                route={FriendTrendsView}
+                backButtonComponent={BackButtonComponent}
+                leftBarComponent={TitleTagLeftComponent}
+                titleBarComponent={TitleImageComponent}
+            />
         );
     }
 }
