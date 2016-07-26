@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
-import LoginButton from '../components/LoginButton';
+import Button from '../../../components/Button';
 import LoginContainer from '../../common/login/container/LoginContainer';
 import {
     View,
@@ -38,7 +38,14 @@ class FriendTrendsView extends React.Component {
                         欧耶~~~~!
                     </Text>
                 </View>
-                <LoginButton
+                <Button
+                    title='立即登录/注册'
+                    image={Images.loginBackgroundIcon}
+                    highlightImage={Images.loginBackgroundClickedIcon}
+                    titleColor='red'
+                    highlightTitleColor='white'
+                    style={{marginTop: 30}}
+                    imageStyle={{ justifyContent: 'center', width: 243, height: 48 }}
                     onPress={this.props.loginOrRegister}
                 />
             </View>
