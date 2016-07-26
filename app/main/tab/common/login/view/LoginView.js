@@ -86,7 +86,7 @@ class LoginView extends React.Component {
                     />
                 </Image>
                 <LoginButton />
-                <Text style={[styles.commonText, { fontSize: 16, color: 'white', backgroundColor: '#00000000', alignSelf: 'flex-end', marginTop: 20, marginRight: 10 }]}>立即注册</Text>
+                <Text style={[styles.commonText, { fontSize: 16, color: 'white', backgroundColor: '#00000000', alignSelf: 'flex-end', marginTop: 20, marginRight: 20 }]}>忘记密码?</Text>
             </View>
         );
     }
