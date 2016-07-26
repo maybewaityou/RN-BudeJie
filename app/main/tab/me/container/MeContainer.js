@@ -2,6 +2,8 @@
 
 import React from 'react';
 import styles from '../../../../styles/Main';
+import Router from '../../../components/Router';
+import { TitleTagLeftComponent, BackButtonComponent, TitleBarMeComponent } from '../../../components/title/Title';
 import MeView from '../view/MeView';
 
 class MeContainer extends React.Component {
@@ -13,7 +15,11 @@ class MeContainer extends React.Component {
 
     render() {
         return (
-            <MeView />
+            <Router
+                route={MeView}
+                backButtonComponent={BackButtonComponent}
+                titleBarComponent={TitleBarMeComponent}
+            />
         );
     }
 }

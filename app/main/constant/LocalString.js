@@ -6,4 +6,5 @@ export default LocalString = {
     tabBarFriendTrends: '关注',
     tabBarMe: '我',
     titleBarFriendTrends: '我的关注',
+    titleBarMe: '我的',
 };

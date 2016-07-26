@@ -46,7 +46,7 @@ NewContainer.propTypes = {
 function mapStateToProps(state) {
     const { essenceAndNewReducer } = state;
     return {
-        
+
     };
 }
 
