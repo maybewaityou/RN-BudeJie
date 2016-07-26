@@ -5,6 +5,7 @@ import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Dimensions from 'Dimensions';
 import LoginButton from './LoginButton';
+import FastLoginButton from './FastLoginButton';
 import {
     View,
     Text,
@@ -26,7 +27,7 @@ class LoginComponent extends React.Component {
     }
 
     /**
-     * 创建 X 按钮
+     * X 按钮
      */
     closeButton() {
         return (
@@ -49,7 +50,7 @@ class LoginComponent extends React.Component {
 
 
     /**
-     * 创建输入布局
+     * 输入布局
      */
     loginLayout() {
         return (
@@ -92,16 +93,55 @@ class LoginComponent extends React.Component {
         );
     }
 
-    
+    /**
+     * 分享布局
+     */
+    fastLoginLayout() {
+        return (
+            <View style={{ justifyContent: 'flex-end', width: width, position: 'absolute', bottom: 20 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                    <Image source={{uri: Images.loginLeftLine}} style={{ width: 103, height: 1 }} />
+                    <Text style={{ fontSize: 16, color: 'white', backgroundColor: '#00000000', marginLeft: 10, marginRight: 10 }}>
+                        快速登录
+                    </Text>
+                    <Image source={{uri: Images.loginRightLine}} style={{ width: 103, height: 1 }} />
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', }}>
+                    <FastLoginButton
+                        title='QQ'
+                        image={Images.loginQQIcon}
+                        clickedImage={Images.loginQQClickedIcon}
+                        style={{ flex: 1 }}
+                    />
+                    <FastLoginButton
+                        title='新浪微博'
+                        image={Images.loginSinaIcon}
+                        clickedImage={Images.loginSinaClickedIcon}
+                        style={{ flex: 1 }}
+                    />
+                    <FastLoginButton
+                        title='腾讯微博'
+                        image={Images.loginTecentIcon}
+                        clickedImage={Images.loginTecentClickedIcon}
+                        style={{ flex: 1 }}
+                    />
+                </View>
+            </View>
+        );
+    }
 
     render() {
         return (
             <Image source={{uri: Images.loginViewBackgroundIcon}} style={{ flex: 1, alignItems: 'center' }}>
 
+                {/* 上边关闭按钮布局 */}
                 {this.closeButton()}
 
+                {/* 中间编辑,登录布局 */}
                 {this.loginLayout()}
 
+                {/* 底部分享布局 */}
+                {this.fastLoginLayout()}
 
             </Image>
         );
