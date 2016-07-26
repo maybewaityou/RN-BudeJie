@@ -3,7 +3,8 @@
 import React, { Component } from 'react';
 import styles from '../../styles/Main';
 import {
-    View
+    View,
+    Text
 } from 'react-native';
 
 class LoginComponent extends React.Component {
@@ -15,8 +16,10 @@ class LoginComponent extends React.Component {
 
     render() {
         return (
-            <View>
-
+            <View style={styles.container}>
+                <Text onPress={this.props.close}>
+                    a;ksjdk;lasjdk;lasdja;lsdkj
+                </Text>
             </View>
         );
     }
