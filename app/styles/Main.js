@@ -1,5 +1,5 @@
 /* jshint esversion: 6 */
-
+import Color from '../main/constant/Color';
 import {
     StyleSheet
 } from 'react-native';
@@ -7,8 +7,9 @@ import {
 export default StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: Color.defaultBackgroundColor,
     },
     commonText: {
         fontSize: 18,
