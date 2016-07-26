@@ -24,6 +24,7 @@ export class TitleTagLeftComponent extends React.Component {
             <TouchableOpacity
                 activeOpacity={1}
                 style={styles.titleBackLayout}
+                onPress={this.props.onPress}
                 onPressIn={() => {
                     this.setState({image: Images.titleEssenceLeftClickedIcon});
                 }}
@@ -47,6 +48,22 @@ export class BackButtonComponent extends React.Component {
     render() {
         return (
             <Text style={styles.titleLeftStyle}>返回</Text>
+        );
+    }
+}
+
+export class TitleImageComponent extends React.Component {
+    constructor(props) {
+        super(props);
+
+
+    }
+
+    render() {
+        return (
+            <View style={styles.titleLayoutStyle}>
+                <Image source={{uri: Images.titleMainIcon}} style={styles.titleMainImageLayout}/>
+            </View>
         );
     }
 }

@@ -6,7 +6,8 @@ import {
 
 export default StyleSheet.create({
     titleLayoutStyle: {
-
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     titleStyle: {
         color: 'white',
@@ -15,6 +16,16 @@ export default StyleSheet.create({
         fontWeight: '600',
         justifyContent: 'center',
         textAlign: 'center',
+        alignItems: 'center',
+    },
+    titleMainImageLayout: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 107,
+        height: 19,
+    },
+    titleMainLayout: {
+        justifyContent: 'center',
         alignItems: 'center',
     },
     titleBackLayout: {
