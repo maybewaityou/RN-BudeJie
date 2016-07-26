@@ -92,7 +92,7 @@ class LoginView extends React.Component {
     }
 
     /**
-     * 分享布局
+     * 快速登录布局
      */
     fastLoginLayout() {
         return (
