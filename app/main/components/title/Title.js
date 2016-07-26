@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import styles from '../../../styles/Title';
 import Images from '../../constant/Images';
 import LocalString from '../../constant/LocalString';
+import Button from '../Button';
 import {
   Text,
   View,
@@ -11,31 +12,16 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-
 class TitleLeftImage extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            image: this.props.image
-        };
-    }
-
     render() {
         return (
-            <TouchableOpacity
-                activeOpacity={1}
+            <Button
+                image={this.props.image}
+                highlightImage={this.props.clickedImage}
                 style={styles.titleBackLayout}
+                imageStyle={{ width: 18, height: 15 }}
                 onPress={this.props.onPress}
-                onPressIn={() => {
-                    this.setState({image: this.props.clickedImage});
-                }}
-                onPressOut={() => {
-                    this.setState({image: this.props.image});
-                }}
-            >
-                <Image source={{uri: this.state.image}} style={{ width: 18, height: 15 }}/>
-            </TouchableOpacity>
+            />
         );
     }
 }
@@ -90,12 +76,6 @@ export class BackButtonComponent extends React.Component {
 }
 
 export class TitleImageComponent extends React.Component {
-    constructor(props) {
-        super(props);
-
-
-    }
-
     render() {
         return (
             <View style={styles.titleLayoutStyle}>
@@ -136,12 +116,6 @@ export class TitleBarMeComponent extends React.Component {
 }
 
 export class RightBarComponent extends React.Component {
-    constructor(props) {
-        super(props);
-
-
-    }
-
     render() {
         return (
             <Text style={styles.titleRightStyle}>Right</Text>
