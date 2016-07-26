@@ -17,16 +17,18 @@
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
-		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		60ADB6B41D41AD7E00A2280D /* NativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ADB6B31D41AD7E00A2280D /* NativeController.swift */; };
-		60B63B771D40C6C4001C1FBB /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B761D40C6C4001C1FBB /* CustomModule.m */; };
-		60B63B7A1D40C8C3001C1FBB /* CustomSwiftModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B791D40C8C3001C1FBB /* CustomSwiftModule.swift */; };
-		60B63B7D1D40C989001C1FBB /* CustomSwiftModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B63B7C1D40C989001C1FBB /* CustomSwiftModule.m */; };
+		60916C5A1D4731420023F67E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60916C561D4731420023F67E /* LaunchScreen.xib */; };
+		60916C5B1D4731420023F67E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60916C581D4731420023F67E /* Images.xcassets */; };
+		60916C5E1D47315D0023F67E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60916C5D1D47315D0023F67E /* Info.plist */; };
+		60916C701D4731C50023F67E /* NativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60916C621D4731C50023F67E /* NativeController.swift */; };
+		60916C711D4731C50023F67E /* CustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60916C641D4731C50023F67E /* CustomModule.m */; };
+		60916C721D4731C50023F67E /* CustomSwiftModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 60916C651D4731C50023F67E /* CustomSwiftModule.m */; };
+		60916C731D4731C50023F67E /* CustomSwiftModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60916C661D4731C50023F67E /* CustomSwiftModule.swift */; };
+		60916C751D4731C50023F67E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60916C6E1D4731C50023F67E /* AppDelegate.m */; };
+		60916C761D4731C50023F67E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60916C6F1D4731C50023F67E /* main.m */; };
+		60916C7C1D4732210023F67E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60916C7B1D4732210023F67E /* RootViewController.m */; };
 		6C41B17BAB38446A95BA488B /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1219A3870B84AEA8D006373 /* libRealmReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8CF40238DA6145CB9312BE82 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 594C2292747549B49CAA6A3A /* libz.tbd */; };
@@ -132,21 +134,23 @@
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* rn_hybrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rn_hybrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = rn_hybrid/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = rn_hybrid/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = rn_hybrid/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rn_hybrid/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = rn_hybrid/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		57DBED5A6D774B2E8A600E8A /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		594C2292747549B49CAA6A3A /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		60ADB6B31D41AD7E00A2280D /* NativeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeController.swift; sourceTree = "<group>"; };
-		60B63B751D40C6C4001C1FBB /* CustomModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomModule.h; sourceTree = "<group>"; };
-		60B63B761D40C6C4001C1FBB /* CustomModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
-		60B63B781D40C8C3001C1FBB /* rn_hybrid-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rn_hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
-		60B63B791D40C8C3001C1FBB /* CustomSwiftModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwiftModule.swift; sourceTree = "<group>"; };
-		60B63B7C1D40C989001C1FBB /* CustomSwiftModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSwiftModule.m; sourceTree = "<group>"; };
+		60916C571D4731420023F67E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		60916C581D4731420023F67E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		60916C5D1D47315D0023F67E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rn_hybrid/Info.plist; sourceTree = "<group>"; };
+		60916C621D4731C50023F67E /* NativeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeController.swift; sourceTree = "<group>"; };
+		60916C631D4731C50023F67E /* CustomModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomModule.h; sourceTree = "<group>"; };
+		60916C641D4731C50023F67E /* CustomModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomModule.m; sourceTree = "<group>"; };
+		60916C651D4731C50023F67E /* CustomSwiftModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSwiftModule.m; sourceTree = "<group>"; };
+		60916C661D4731C50023F67E /* CustomSwiftModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwiftModule.swift; sourceTree = "<group>"; };
+		60916C6D1D4731C50023F67E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		60916C6E1D4731C50023F67E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		60916C6F1D4731C50023F67E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		60916C7A1D4732210023F67E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		60916C7B1D4732210023F67E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		60916C7E1D4732EA0023F67E /* rn_hybrid-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rn_hybrid-Bridging-Header.h"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		A1219A3870B84AEA8D006373 /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
@@ -261,14 +265,10 @@
 		13B07FAE1A68108700A75B9A /* rn_hybrid */ = {
 			isa = PBXGroup;
 			children = (
-				60B63B6A1D40C531001C1FBB /* CustomModules */,
+				60916C5F1D4731C50023F67E /* Classes */,
+				60916C551D4731420023F67E /* Resource */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
-				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
-				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				13B07FB51A68108700A75B9A /* Images.xcassets */,
-				13B07FB61A68108700A75B9A /* Info.plist */,
-				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
-				13B07FB71A68108700A75B9A /* main.m */,
+				60916C5D1D47315D0023F67E /* Info.plist */,
 			);
 			name = rn_hybrid;
 			sourceTree = "<group>";
@@ -290,33 +290,97 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		60916C551D4731420023F67E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				60916C561D4731420023F67E /* LaunchScreen.xib */,
+				60916C581D4731420023F67E /* Images.xcassets */,
+			);
+			name = Resource;
+			path = rn_hybrid/Resource;
+			sourceTree = "<group>";
+		};
+		60916C5F1D4731C50023F67E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				60916C601D4731C50023F67E /* CustomModules */,
+				60916C681D4731C50023F67E /* Main */,
+			);
+			name = Classes;
+			path = rn_hybrid/Classes;
+			sourceTree = "<group>";
+		};
+		60916C601D4731C50023F67E /* CustomModules */ = {
+			isa = PBXGroup;
+			children = (
+				60916C611D4731C50023F67E /* Controller */,
+				60916C631D4731C50023F67E /* CustomModule.h */,
+				60916C641D4731C50023F67E /* CustomModule.m */,
+				60916C651D4731C50023F67E /* CustomSwiftModule.m */,
+				60916C661D4731C50023F67E /* CustomSwiftModule.swift */,
+			);
+			path = CustomModules;
+			sourceTree = "<group>";
+		};
+		60916C611D4731C50023F67E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60916C621D4731C50023F67E /* NativeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		60916C681D4731C50023F67E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				60916C7D1D4732EA0023F67E /* Category */,
+				60916C771D4731E20023F67E /* Controller */,
+				60916C691D4731C50023F67E /* Category */,
+				60916C6C1D4731C50023F67E /* Others */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		60916C691D4731C50023F67E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		60916C6C1D4731C50023F67E /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				60916C6D1D4731C50023F67E /* AppDelegate.h */,
+				60916C6E1D4731C50023F67E /* AppDelegate.m */,
+				60916C6F1D4731C50023F67E /* main.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		60916C771D4731E20023F67E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60916C7A1D4732210023F67E /* RootViewController.h */,
+				60916C7B1D4732210023F67E /* RootViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		60916C7D1D4732EA0023F67E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				60916C7E1D4732EA0023F67E /* rn_hybrid-Bridging-Header.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		609287641D41F4840026034E /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				609287721D41F4840026034E /* libRealmReact.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		60ADB6B21D41AC6200A2280D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				60ADB6B31D41AD7E00A2280D /* NativeController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		60B63B6A1D40C531001C1FBB /* CustomModules */ = {
-			isa = PBXGroup;
-			children = (
-				60ADB6B21D41AC6200A2280D /* Controller */,
-				60B63B751D40C6C4001C1FBB /* CustomModule.h */,
-				60B63B761D40C6C4001C1FBB /* CustomModule.m */,
-				60B63B791D40C8C3001C1FBB /* CustomSwiftModule.swift */,
-				60B63B7C1D40C989001C1FBB /* CustomSwiftModule.m */,
-				60B63B781D40C8C3001C1FBB /* rn_hybrid-Bridging-Header.h */,
-			);
-			path = CustomModules;
 			sourceTree = "<group>";
 		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
@@ -587,8 +651,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				60916C5E1D47315D0023F67E /* Info.plist in Resources */,
+				60916C5A1D4731420023F67E /* LaunchScreen.xib in Resources */,
+				60916C5B1D4731420023F67E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,12 +689,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60B63B7A1D40C8C3001C1FBB /* CustomSwiftModule.swift in Sources */,
-				60B63B7D1D40C989001C1FBB /* CustomSwiftModule.m in Sources */,
-				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				60ADB6B41D41AD7E00A2280D /* NativeController.swift in Sources */,
-				60B63B771D40C6C4001C1FBB /* CustomModule.m in Sources */,
+				60916C731D4731C50023F67E /* CustomSwiftModule.swift in Sources */,
+				60916C7C1D4732210023F67E /* RootViewController.m in Sources */,
+				60916C711D4731C50023F67E /* CustomModule.m in Sources */,
+				60916C751D4731C50023F67E /* AppDelegate.m in Sources */,
+				60916C721D4731C50023F67E /* CustomSwiftModule.m in Sources */,
+				60916C761D4731C50023F67E /* main.m in Sources */,
+				60916C701D4731C50023F67E /* NativeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,13 +710,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
+		60916C561D4731420023F67E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				13B07FB21A68108700A75B9A /* Base */,
+				60916C571D4731420023F67E /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = rn_hybrid;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -713,7 +778,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = rn_hybrid;
-				SWIFT_OBJC_BRIDGING_HEADER = "CustomModules/rn_hybrid-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "rn_hybrid/Classes/Main/Category/rn_hybrid-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -737,7 +802,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = rn_hybrid;
-				SWIFT_OBJC_BRIDGING_HEADER = "CustomModules/rn_hybrid-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "rn_hybrid/Classes/Main/Category/rn_hybrid-Bridging-Header.h";
 			};
 			name = Release;
 		};
