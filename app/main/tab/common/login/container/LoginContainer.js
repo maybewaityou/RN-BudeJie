@@ -18,8 +18,21 @@ class LoginContainer extends React.Component {
     render() {
         return (
             <LoginView
+                width={width}
                 canFocus={this.props.canFocus}
                 dismiss={this.props.dismiss}
+                login={() => {
+                    console.log('---->>> login');
+                }}
+                qqLogin={() => {
+                    console.log('---->>> qqLogin');
+                }}
+                sinaLogin={() => {
+                    console.log('---->>> sinaLogin');
+                }}
+                tecentLogin={() => {
+                    console.log('---->>> tecentLogin');
+                }}
             />
         );
     }

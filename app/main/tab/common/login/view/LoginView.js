@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import styles from '../../../../../styles/Main';
 import Images from '../../../../constant/Images';
-import Dimensions from 'Dimensions';
 import LoginButton from '../LoginButton';
 import FastLoginButton from '../FastLoginButton';
 import {
@@ -13,8 +12,6 @@ import {
     TouchableOpacity,
     TextInput
 } from 'react-native';
-
-var { width, height } = Dimensions.get('window');
 
 class LoginView extends React.Component {
     constructor(props) {
@@ -52,7 +49,7 @@ class LoginView extends React.Component {
      */
     loginLayout() {
         return (
-            <View style={{ width: width, marginTop: 30, alignItems: 'center' }}>
+            <View style={{ width: this.props.width, marginTop: 30, alignItems: 'center' }}>
                 <Image source={{uri: Images.loginEditBackgroundIcon}} style={{ width: 266, height: 92 }} >
                     <TextInput
                         placeholder='用户名'
@@ -85,7 +82,9 @@ class LoginView extends React.Component {
                         }}
                     />
                 </Image>
-                <LoginButton />
+                <LoginButton
+                    onPress={this.props.login}
+                />
                 <Text style={[styles.commonText, { fontSize: 16, color: 'white', backgroundColor: '#00000000', alignSelf: 'flex-end', marginTop: 20, marginRight: 20 }]}>忘记密码?</Text>
             </View>
         );
@@ -96,7 +95,7 @@ class LoginView extends React.Component {
      */
     fastLoginLayout() {
         return (
-            <View style={{ justifyContent: 'flex-end', width: width, position: 'absolute', bottom: 20 }}>
+            <View style={{ justifyContent: 'flex-end', width: this.props.width, position: 'absolute', bottom: 20 }}>
                 <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                     <Image source={{uri: Images.loginLeftLine}} style={{ width: 103, height: 1 }} />
                     <Text style={{ fontSize: 16, color: 'white', backgroundColor: '#00000000', marginLeft: 10, marginRight: 10 }}>
@@ -110,18 +109,21 @@ class LoginView extends React.Component {
                         image={Images.loginQQIcon}
                         clickedImage={Images.loginQQClickedIcon}
                         style={{ flex: 1 }}
+                        onPress={this.props.qqLogin}
                     />
                     <FastLoginButton
                         title='新浪微博'
                         image={Images.loginSinaIcon}
                         clickedImage={Images.loginSinaClickedIcon}
                         style={{ flex: 1 }}
+                        onPress={this.props.sinaLogin}
                     />
                     <FastLoginButton
                         title='腾讯微博'
                         image={Images.loginTecentIcon}
                         clickedImage={Images.loginTecentClickedIcon}
                         style={{ flex: 1 }}
+                        onPress={this.props.tecentLogin}
                     />
                 </View>
             </View>
