@@ -1,6 +1,7 @@
 /* jshint esversion: 6 */
 
 import React, { Component } from 'react';
+import Color from '../constant/Color';
 import OriginalRouter from 'react-native-simple-router';
 
 class Router extends React.Component {
@@ -15,7 +16,7 @@ class Router extends React.Component {
                 }}
                 handleBackAndroid={true}
                 backButtonComponent={this.props.title.backButtonComponent}
-                headerStyle={{backgroundColor: '#5cafec'}}
+                headerStyle={{backgroundColor: Color.titleBackgroundColor}}
             />
         );
     }

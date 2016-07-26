@@ -2,7 +2,7 @@
 
 export default Color = {
     defaultBackgroundColor: '#dcdcdc',
-    titleBackgroundColor: '#009271',
+    titleBackgroundColor: '#f6f6f6',
     titleTextColor: '#515151',
     titleBackColor: '#010101',
     titleBackHighlightedColor: 'red',
