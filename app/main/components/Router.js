@@ -10,12 +10,12 @@ class Router extends React.Component {
             <OriginalRouter
                 firstRoute={{
                     component: this.props.route,
-                    leftCorner: this.props.title.leftBarComponent,
-                    titleComponent: this.props.title.titleBarComponent,
-                    rightCorner: this.props.title.rightBarComponent,
+                    leftCorner: this.props.leftBarComponent,
+                    titleComponent: this.props.titleBarComponent,
+                    rightCorner: this.props.rightBarComponent,
                 }}
                 handleBackAndroid={true}
-                backButtonComponent={this.props.title.backButtonComponent}
+                backButtonComponent={this.props.backButtonComponent}
                 headerStyle={{backgroundColor: Color.titleBackgroundColor}}
             />
         );

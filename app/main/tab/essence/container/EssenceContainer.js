@@ -2,6 +2,8 @@
 
 import React from 'react';
 import styles from '../../../../styles/Main';
+import Router from '../../../components/Router';
+import { TitleTagLeftComponent, BackButtonComponent, TitleBarComponent, RightBarComponent } from '../../../components/title/Title';
 import EssenceView from '../view/EssenceView';
 
 class EssenceContainer extends React.Component {
@@ -13,7 +15,13 @@ class EssenceContainer extends React.Component {
 
     render() {
         return (
-            <EssenceView />
+            <Router
+                route={EssenceView}
+                backButtonComponent={BackButtonComponent}
+                leftBarComponent={TitleTagLeftComponent}
+                titleBarComponent={TitleBarComponent}
+                rightBarComponent={RightBarComponent}
+            />
         );
     }
 }

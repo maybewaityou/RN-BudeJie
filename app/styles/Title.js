@@ -18,7 +18,9 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     titleBackLayout: {
-
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
     },
     titleLeftStyle: {
         color: 'white',

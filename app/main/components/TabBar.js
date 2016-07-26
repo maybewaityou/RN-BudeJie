@@ -6,7 +6,6 @@ import Constant from '../constant/Constant';
 import Color from '../constant/Color';
 import Images from '../constant/Images';
 import LocalString from '../constant/LocalString';
-import Title from './title/Title';
 import EssenceContainer from '../tab/essence/container/EssenceContainer';
 import FriendTrendsContainer from '../tab/friendTrends/container/FriendTrendsContainer';
 import MeContainer from '../tab/me/container/MeContainer';
