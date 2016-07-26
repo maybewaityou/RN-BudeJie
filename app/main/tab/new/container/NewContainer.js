@@ -2,6 +2,8 @@
 
 import React from 'react';
 import styles from '../../../../styles/Main';
+import Router from '../../../components/Router';
+import { TitleTagLeftComponent, BackButtonComponent, TitleBarNewComponent } from '../../../components/title/Title';
 import NewView from '../view/NewView';
 
 class NewContainer extends React.Component {
@@ -13,7 +15,12 @@ class NewContainer extends React.Component {
 
     render() {
         return (
-            <NewView />
+            <Router
+                route={NewView}
+                backButtonComponent={BackButtonComponent}
+                leftBarComponent={TitleTagLeftComponent}
+                titleBarComponent={TitleBarNewComponent}
+            />
         );
     }
 }

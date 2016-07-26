@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from '../../../../styles/Main';
 import Router from '../../../components/Router';
-import { TitleTagLeftComponent, BackButtonComponent, TitleBarComponent, TitleImageComponent, RightBarComponent } from '../../../components/title/Title';
+import { TitleTagLeftComponent, BackButtonComponent, TitleImageComponent } from '../../../components/title/Title';
 import EssenceView from '../view/EssenceView';
 
 class EssenceContainer extends React.Component {
