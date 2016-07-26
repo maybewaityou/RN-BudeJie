@@ -110,6 +110,7 @@ class LoginView extends React.Component {
                     onPress={this.props.login}
                 />
                 <TouchableOpacity
+                    activeOpacity={0.8}
                     style={{ alignSelf: 'flex-end', padding: 20, paddingTop: 0, marginTop: 20 }}
                     onPress={this.props.goToForgetPassword}
                 >
