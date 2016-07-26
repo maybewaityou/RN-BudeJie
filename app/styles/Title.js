@@ -17,6 +17,9 @@ export default StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
     },
+    titleBackLayout: {
+
+    },
     titleLeftStyle: {
         color: 'white',
         fontSize: 16,

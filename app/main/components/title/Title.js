@@ -4,30 +4,38 @@ import React, { Component } from 'react';
 import styles from '../../../styles/Title';
 import {
   Text,
-  View
+  View,
+  TouchableHighlight
 } from 'react-native';
 
 export default title = {
     backButtonComponent: () => {
         return (
-            <Text style={styles.titleLeftStyle}>返回</Text>
+            <TouchableHighlight
+                underlayColor='red'
+                style={styles.titleBackLayout}
+            >
+                <Text style={styles.titleLeftStyle}>返回</Text>
+            </TouchableHighlight>
         );
     },
-    leftBarComponent: () => {
-        return (
-            <Text style={styles.titleLeftStyle}>Left</Text>
-        );
+    essenceTitle: {
+        leftBarComponent: () => {
+            return (
+                <Text style={styles.titleLeftStyle}>Left</Text>
+            );
+        },
+        titleBarComponent: () => {
+            return (
+                <View style={styles.titleLayoutStyle}>
+                    <Text style={styles.titleStyle}>RootRoute</Text>
+                </View>
+            );
+        },
+        rightBarComponent: () => {
+            return (
+                <Text style={styles.titleRightStyle}>Right</Text>
+            );
+        }
     },
-    titleBarComponent: () => {
-        return (
-            <View style={styles.titleLayoutStyle}>
-                <Text style={styles.titleStyle}>RootRoute</Text>
-            </View>
-        );
-    },
-    rightBarComponent: () => {
-        return (
-            <Text style={styles.titleRightStyle}>Right</Text>
-        );
-    }
 };
