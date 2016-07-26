@@ -2,6 +2,9 @@
 'use strict';
 
 /* ============================= Action Type Start =============================== */
+// 精华页面 && 新帖页面
+export const GO_TO_TAG = 'GO_TO_TAG';
+
 // 关注页面
 export const GO_TO_FOLLOW = 'GO_TO_FOLLOW';
 export const MODAL = 'MODAL';

@@ -2,6 +2,7 @@
 
 import { combineReducers } from 'redux';
 import {
+    GO_TO_TAG,
     GO_TO_FOLLOW,
     MODAL,
     DISMISS,
@@ -14,6 +15,20 @@ import {
     GO_TO_FORGET_PASSWORD,
     REGISTER
 } from '../actions/ActionsType';
+
+function essenceReducer(state = {
+
+}, action) {
+    switch (action.type) {
+        case GO_TO_TAG:
+            console.log('======>>>>> goToTag');
+            return {
+                ...state
+            };
+        default:
+            return state;
+    }
+}
 
 function friendTrendsReducer(state = {
     modalVisible: false
@@ -94,6 +109,7 @@ function loginReducer(state = {
 }
 
 const rootReducer = combineReducers({
+    essenceReducer,
     friendTrendsReducer,
     loginReducer
 });

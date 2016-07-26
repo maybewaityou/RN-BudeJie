@@ -2,6 +2,7 @@
 'use strict';
 
 import {
+    GO_TO_TAG,
     GO_TO_FOLLOW,
     MODAL,
     DISMISS,
@@ -16,6 +17,15 @@ import {
 } from './ActionsType';
 
 /* ============================= Action Creator Start =============================== */
+export function goToTag() {
+    return {
+        type: GO_TO_TAG,
+        payload: {
+
+        }
+    };
+}
+
 export function goToFollow() {
     return {
         type: GO_TO_FOLLOW,
