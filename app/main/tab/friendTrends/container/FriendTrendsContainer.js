@@ -4,8 +4,9 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { modal, dismiss, weatherCanFocus, goToFollow } from '../../../../framework/redux/actions/Actions';
 import styles from '../../../../styles/Main';
+import LocalString from '../../../constant/LocalString';
 import Router from '../../../components/Router';
-import { TitleFriendTrendsLeftComponent, BackButtonComponent, TitleBarFriendTrendsComponent } from '../../../components/title/Title';
+import { TitleFriendTrendsLeftComponent, BackButtonComponent, TitleBarTextComponent } from '../../../components/title/Title';
 import FriendTrendsView from '../view/FriendTrendsView';
 
 class FriendTrendsContainer extends React.Component {
@@ -21,6 +22,12 @@ class FriendTrendsContainer extends React.Component {
         );
     }
 
+    titleBarComponent() {
+        return (
+            <TitleBarTextComponent title={LocalString.titleBarFriendTrends} />
+        );
+    }
+
     initFriendTrendsView() {
         const { dispatch, modalVisible, canFocus } = this.props;
         return (
@@ -29,7 +36,7 @@ class FriendTrendsContainer extends React.Component {
                 transparent={false}
                 modalVisible={modalVisible}
                 canFocus={canFocus}
-                handleOnShow={() => {
+                onShow={() => {
                     dispatch(weatherCanFocus(canFocus));
                 }}
                 loginOrRegister={() => {
@@ -45,7 +52,7 @@ class FriendTrendsContainer extends React.Component {
                 route={this.initFriendTrendsView.bind(this)}
                 backButtonComponent={BackButtonComponent}
                 leftBarComponent={this.leftBarComponent.bind(this)}
-                titleBarComponent={TitleBarFriendTrendsComponent}
+                titleBarComponent={this.titleBarComponent.bind(this)}
             />
         );
     }

@@ -2,15 +2,17 @@
 
 import React from 'react';
 import styles from '../../../../styles/Main';
+import LocalString from '../../../constant/LocalString';
 import Router from '../../../components/Router';
-import { TitleTagLeftComponent, BackButtonComponent, TitleBarMeComponent } from '../../../components/title/Title';
+import { TitleTagLeftComponent, BackButtonComponent, TitleBarTextComponent } from '../../../components/title/Title';
 import MeView from '../view/MeView';
 
 class MeContainer extends React.Component {
-    constructor(props) {
-        super(props);
 
-
+    titleBarComponent() {
+        return (
+            <TitleBarTextComponent title={LocalString.titleBarMe} />
+        );
     }
 
     render() {
@@ -18,7 +20,7 @@ class MeContainer extends React.Component {
             <Router
                 route={MeView}
                 backButtonComponent={BackButtonComponent}
-                titleBarComponent={TitleBarMeComponent}
+                titleBarComponent={this.titleBarComponent.bind(this)}
             />
         );
     }

@@ -26,16 +26,6 @@ class TitleLeftImage extends React.Component {
     }
 }
 
-class TitleBarTextComponent extends React.Component {
-    render() {
-        return (
-            <View style={styles.titleLayoutStyle}>
-                <Text style={styles.titleStyle}>{this.props.text}</Text>
-            </View>
-        );
-    }
-}
-
 /*=================================== Export Start =========================================*/
 export class TitleTagLeftComponent extends React.Component {
     render() {
@@ -62,12 +52,6 @@ export class TitleFriendTrendsLeftComponent extends React.Component {
 }
 
 export class BackButtonComponent extends React.Component {
-    constructor(props) {
-        super(props);
-
-
-    }
-
     render() {
         return (
             <Text style={styles.titleLeftStyle}>返回</Text>
@@ -85,32 +69,12 @@ export class TitleImageComponent extends React.Component {
     }
 }
 
-export class TitleBarNewComponent extends React.Component {
+export class TitleBarTextComponent extends React.Component {
     render() {
         return (
-            <TitleBarTextComponent
-                text={LocalString.tabBarNew}
-            />
-        );
-    }
-}
-
-export class TitleBarFriendTrendsComponent extends React.Component {
-    render() {
-        return (
-            <TitleBarTextComponent
-                text={LocalString.titleBarFriendTrends}
-            />
-        );
-    }
-}
-
-export class TitleBarMeComponent extends React.Component {
-    render() {
-        return (
-            <TitleBarTextComponent
-                text={LocalString.titleBarMe}
-            />
+            <View style={styles.titleLayoutStyle}>
+                <Text style={styles.titleStyle}>{this.props.title}</Text>
+            </View>
         );
     }
 }
