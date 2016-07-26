@@ -113,6 +113,16 @@ export class TitleBarNewComponent extends React.Component {
     }
 }
 
+export class TitleBarFriendTrendsComponent extends React.Component {
+    render() {
+        return (
+            <TitleBarTextComponent
+                text={LocalString.titleBarFriendTrends}
+            />
+        );
+    }
+}
+
 export class RightBarComponent extends React.Component {
     constructor(props) {
         super(props);
