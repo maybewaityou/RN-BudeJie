@@ -1,5 +1,6 @@
 /* jshint esversion: 6 */
 
+import Color from '../main/constant/Color';
 import {
     StyleSheet
 } from 'react-native';
@@ -10,7 +11,7 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     titleStyle: {
-        color: 'white',
+        color: Color.defaultTextColor,
         fontSize: 18,
         margin: 10,
         fontWeight: '600',

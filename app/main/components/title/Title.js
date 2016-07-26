@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import styles from '../../../styles/Title';
 import Images from '../../constant/Images';
+import LocalString from '../../constant/LocalString';
 import {
   Text,
   View,
@@ -39,24 +40,34 @@ class TitleLeftImage extends React.Component {
     }
 }
 
+class TitleBarTextComponent extends React.Component {
+    render() {
+        return (
+            <View style={styles.titleLayoutStyle}>
+                <Text style={styles.titleStyle}>{this.props.text}</Text>
+            </View>
+        );
+    }
+}
+
 /*=================================== Export Start =========================================*/
 export class TitleTagLeftComponent extends React.Component {
     render() {
         return (
             <TitleLeftImage
-                image={Images.titleEssenceLeftClickedIcon}
-                clickedImage={Images.titleEssenceLeftIcon}
+                image={Images.titleEssenceLeftIcon}
+                clickedImage={Images.titleEssenceLeftClickedIcon}
             />
         );
     }
 }
 
-export class TitleTagLeftComponent extends React.Component {
+export class TitleFriendTrendsLeftComponent extends React.Component {
     render() {
         return (
             <TitleLeftImage
-                image={Images.titleEssenceLeftClickedIcon}
-                clickedImage={Images.titleEssenceLeftIcon}
+                image={Images.titleFriendTrendsIcon}
+                clickedImage={Images.titleFriendTrendsClickedIcon}
             />
         );
     }
@@ -92,18 +103,12 @@ export class TitleImageComponent extends React.Component {
     }
 }
 
-export class TitleBarComponent extends React.Component {
-    constructor(props) {
-        super(props);
-
-
-    }
-
+export class TitleBarNewComponent extends React.Component {
     render() {
         return (
-            <View style={styles.titleLayoutStyle}>
-                <Text style={styles.titleStyle}>RootRoute</Text>
-            </View>
+            <TitleBarTextComponent
+                text={LocalString.tabBarNew}
+            />
         );
     }
 }
