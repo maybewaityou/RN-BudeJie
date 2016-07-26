@@ -1,11 +1,11 @@
 /* jshint esversion: 6 */
 
 import React, { Component } from 'react';
-import styles from '../../../../styles/Main';
-import Images from '../../../constant/Images';
+import styles from '../../../../../styles/Main';
+import Images from '../../../../constant/Images';
 import Dimensions from 'Dimensions';
-import LoginButton from './LoginButton';
-import FastLoginButton from './FastLoginButton';
+import LoginButton from '../LoginButton';
+import FastLoginButton from '../FastLoginButton';
 import {
     View,
     Text,
@@ -16,7 +16,7 @@ import {
 
 var { width, height } = Dimensions.get('window');
 
-class LoginComponent extends React.Component {
+class LoginView extends React.Component {
     constructor(props) {
         super(props);
 
@@ -34,7 +34,7 @@ class LoginComponent extends React.Component {
             <TouchableOpacity
                 activeOpacity={1}
                 style={{ alignSelf: 'flex-start', marginTop: 30, marginLeft: 10, padding: 10 }}
-                onPress={this.props.close}
+                onPress={this.props.dismiss}
                 onPressIn={() => {
                     this.setState({closeImage: Images.loginCloseIcon});
                 }}
@@ -146,4 +146,4 @@ class LoginComponent extends React.Component {
     }
 }
 
-export default LoginComponent;
+export default LoginView;

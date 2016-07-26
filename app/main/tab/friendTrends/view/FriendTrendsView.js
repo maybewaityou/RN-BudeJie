@@ -4,7 +4,7 @@ import React from 'react';
 import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import LoginButton from '../components/LoginButton';
-import LoginComponent from '../../common/login/LoginComponent';
+import LoginContainer from '../../common/login/container/LoginContainer';
 import {
     View,
     Image,
@@ -22,9 +22,9 @@ class FriendTrendsView extends React.Component {
                     visible={this.props.modalVisible}
                     onShow={this.props.handleOnShow}
                 >
-                    <LoginComponent
+                    <LoginContainer
                         canFocus={this.props.canFocus}
-                        close={this.props.dismiss}
+                        dismiss={this.props.dismiss}
                     />
                 </Modal>
                 <Image source={{uri: Images.headerCryIcon}} style={{ width: 48, height: 48, marginBottom: 10 }}/>
