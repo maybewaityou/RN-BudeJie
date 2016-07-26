@@ -2,7 +2,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { login, qqLogin, sinaLogin, tecentLogin, goToRegister, dismiss } from '../../../../../framework/redux/actions/Actions';
+import { login, qqLogin, sinaLogin, tecentLogin, goToRegister, goToForgetPassword, dismiss } from '../../../../../framework/redux/actions/Actions';
 import styles from '../../../../../styles/Main';
 import Images from '../../../../constant/Images';
 import LoginView from '../view/LoginView';
@@ -35,6 +35,12 @@ class LoginContainer extends React.Component {
                 }}
                 tecentLogin={() => {
                     dispatch(tecentLogin({userName: 'zhaoliu', password: '123'}));
+                }}
+                goToRegister={() => {
+                    dispatch(goToRegister());
+                }}
+                goToForgetPassword={() => {
+                    dispatch(goToForgetPassword());
                 }}
             />
         );

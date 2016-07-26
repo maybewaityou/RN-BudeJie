@@ -10,6 +10,7 @@ import {
     SINA_LOGIN,
     TECENT_LOGIN,
     GO_TO_REGISTER,
+    GO_TO_FORGET_PASSWORD,
     REGISTER
 } from '../actions/ActionsType';
 
@@ -71,6 +72,12 @@ function loginReducer(state = {
             };
         case GO_TO_REGISTER:
             console.log('======>>>>> goToRegister');
+            return {
+                ...state,
+                userInfo: action.payload.userInfo
+            };
+        case GO_TO_FORGET_PASSWORD:
+            console.log('======>>>>> goToForgetPassword');
             return {
                 ...state,
                 userInfo: action.payload.userInfo

@@ -10,6 +10,7 @@ import {
     SINA_LOGIN,
     TECENT_LOGIN,
     GO_TO_REGISTER,
+    GO_TO_FORGET_PASSWORD,
     REGISTER
 } from './ActionsType';
 
@@ -80,6 +81,15 @@ export function tecentLogin(userInfo) {
 export function goToRegister() {
     return {
         type: GO_TO_REGISTER,
+        payload: {
+
+        }
+    };
+}
+
+export function goToForgetPassword() {
+    return {
+        type: GO_TO_FORGET_PASSWORD,
         payload: {
 
         }

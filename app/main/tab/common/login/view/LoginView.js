@@ -19,7 +19,8 @@ class LoginView extends React.Component {
 
         this.state = {
             closeImage: Images.loginCloseIcon,
-            isFocus: false
+            registerIcon: Images.loginRegisterIcon,
+            isFocus: false,
         };
     }
 
@@ -45,11 +46,34 @@ class LoginView extends React.Component {
     }
 
     /**
+     * 注册按钮
+     */
+    registerButton() {
+        return (
+            <TouchableOpacity
+                activeOpacity={1}
+                style={{ position: 'absolute', top: 30, right: 10 }}
+                onPress={this.props.goToRegister}
+                onPressIn={() => {
+                    this.setState({registerIcon: Images.loginRegisterClickedIcon});
+                }}
+                onPressOut={() => {
+                    this.setState({registerIcon: Images.loginRegisterIcon});
+                }}
+            >
+                <Image source={{uri: this.state.registerIcon}} style={{  justifyContent: 'center', width: 55, height: 45 }}>
+                    <Text style={[styles.commonText, { fontSize: 16, color: 'white', backgroundColor: '#00000000' }]}>注册</Text>
+                </Image>
+            </TouchableOpacity>
+        );
+    }
+
+    /**
      * 输入布局
      */
     loginLayout() {
         return (
-            <View style={{ width: this.props.width, marginTop: 30, alignItems: 'center' }}>
+            <View style={{ width: this.props.width, marginTop: 50, alignItems: 'center' }}>
                 <Image source={{uri: Images.loginEditBackgroundIcon}} style={{ width: 266, height: 92 }} >
                     <TextInput
                         placeholder='用户名'
@@ -85,7 +109,12 @@ class LoginView extends React.Component {
                 <LoginButton
                     onPress={this.props.login}
                 />
-                <Text style={[styles.commonText, { fontSize: 16, color: 'white', backgroundColor: '#00000000', alignSelf: 'flex-end', marginTop: 20, marginRight: 20 }]}>忘记密码?</Text>
+                <TouchableOpacity
+                    style={{ alignSelf: 'flex-end', padding: 20, paddingTop: 0, marginTop: 20 }}
+                    onPress={this.props.goToForgetPassword}
+                >
+                    <Text style={[styles.commonText, { fontSize: 16, color: 'white', backgroundColor: '#00000000'}]}>忘记密码?</Text>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -136,6 +165,9 @@ class LoginView extends React.Component {
 
                 {/* 上边关闭按钮布局 */}
                 {this.dismissButton()}
+
+                {/* 上边注册按钮布局 */}
+                {this.registerButton()}
 
                 {/* 中间编辑,登录布局 */}
                 {this.loginLayout()}
