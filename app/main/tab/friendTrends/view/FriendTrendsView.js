@@ -20,8 +20,10 @@ class FriendTrendsView extends React.Component {
                     animationType={this.props.animationType}
                     transparent={this.props.transparent}
                     visible={this.props.modalVisible}
+                    onShow={this.props.handleOnShow}
                 >
                     <LoginComponent
+                        canFocus={this.props.canFocus}
                         close={this.props.dismiss}
                     />
                 </Modal>

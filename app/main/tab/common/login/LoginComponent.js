@@ -47,8 +47,6 @@ class LoginComponent extends React.Component {
         );
     }
 
-
-
     /**
      * 输入布局
      */
@@ -61,7 +59,7 @@ class LoginComponent extends React.Component {
                         placeholderTextColor={this.state.isFocus ? 'white' : 'gray'}
                         selectionColor='white'
                         clearButtonMode='while-editing'
-                        autoFocus={true}
+                        autoFocus={this.props.canFocus}
                         enablesReturnKeyAutomatically={true}
                         style={{ marginLeft: 10, marginTop: 5, color: 'white', height: 40 }}
                         onFocus={() => {

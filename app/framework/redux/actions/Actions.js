@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
 'use strict';
 
-import { MODAL, DISMISS } from './ActionsType';
+import { MODAL, DISMISS, CAN_FOCUS } from './ActionsType';
 
 /* ============================= Action Creator Start =============================== */
 export function modal(visible) {
@@ -18,6 +18,15 @@ export function dismiss(visible) {
         type: DISMISS,
         payload: {
             modalVisible: visible
+        }
+    };
+}
+
+export function weatherCanFocus(visible) {
+    return {
+        type: CAN_FOCUS,
+        payload: {
+            canFocus: visible
         }
     };
 }

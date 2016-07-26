@@ -3,7 +3,8 @@
 import { combineReducers } from 'redux';
 import {
     MODAL,
-    DISMISS
+    DISMISS,
+    CAN_FOCUS
 } from '../actions/ActionsType';
 
 function friendTrendsReducer(state = {
@@ -27,8 +28,24 @@ function friendTrendsReducer(state = {
     }
 }
 
+function loginReducer(state = {
+    canFocus: true
+}, action) {
+    switch (action.type) {
+        case CAN_FOCUS:
+            console.log('======>>>>> canFocus');
+            return {
+                ...state,
+                canFocus: action.payload.canFocus
+            };
+        default:
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
-    friendTrendsReducer
+    friendTrendsReducer,
+    loginReducer
 });
 
 export default rootReducer;
