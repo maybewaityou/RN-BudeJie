@@ -16,7 +16,7 @@ import {
     REGISTER
 } from '../actions/ActionsType';
 
-function essenceReducer(state = {
+function essenceAndNewReducer(state = {
 
 }, action) {
     switch (action.type) {
@@ -109,7 +109,7 @@ function loginReducer(state = {
 }
 
 const rootReducer = combineReducers({
-    essenceReducer,
+    essenceAndNewReducer,
     friendTrendsReducer,
     loginReducer
 });

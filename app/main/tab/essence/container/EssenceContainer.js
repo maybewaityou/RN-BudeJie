@@ -20,7 +20,7 @@ class EssenceContainer extends React.Component {
         return (
             <TitleTagLeftComponent
                 onPress={() => {
-                    dispatch(goToTag())
+                    dispatch(goToTag());
                 }}
             />
         );
