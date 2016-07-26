@@ -4,10 +4,6 @@ import React, { Component } from 'react';
 import OriginalRouter from 'react-native-simple-router';
 
 class Router extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <OriginalRouter
@@ -24,3 +20,5 @@ class Router extends React.Component {
         );
     }
 }
+
+export default Router;
