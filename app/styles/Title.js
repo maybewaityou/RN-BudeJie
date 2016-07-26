@@ -33,6 +33,7 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
+        marginLeft: 10,
     },
     titleLeftStyle: {
         color: 'white',
