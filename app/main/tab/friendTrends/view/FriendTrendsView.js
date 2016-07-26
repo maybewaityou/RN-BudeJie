@@ -38,7 +38,7 @@ class FriendTrendsView extends React.Component {
                     </Text>
                 </View>
                 <LoginButton
-                    onPress={this.props.onPress}
+                    onPress={this.props.loginOrRegister}
                 />
             </View>
         );

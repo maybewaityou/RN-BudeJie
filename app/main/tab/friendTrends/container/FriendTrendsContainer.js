@@ -18,7 +18,7 @@ class FriendTrendsContainer extends React.Component {
                 animationType='slide'
                 transparent={false}
                 modalVisible={modalVisible}
-                onPress={() => {
+                loginOrRegister={() => {
                     dispatch(modal(true));
                 }}
                 dismiss={() => {

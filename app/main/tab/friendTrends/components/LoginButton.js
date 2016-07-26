@@ -10,7 +10,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-
 class LoginButton extends Component {
     constructor(props) {
         super(props);
