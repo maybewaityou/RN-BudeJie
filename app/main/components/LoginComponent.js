@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 import styles from '../../styles/Main';
 import {
     View,
-    Text
+    Text,
+    Image
 } from 'react-native';
 
 class LoginComponent extends React.Component {
@@ -16,11 +17,11 @@ class LoginComponent extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <Image source={{uri: ''}} style={styles.container}>
                 <Text onPress={this.props.close}>
                     dismiss
                 </Text>
-            </View>
+            </Image>
         );
     }
 }
