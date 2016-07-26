@@ -29,7 +29,7 @@ class LoginView extends React.Component {
     /**
      * X 按钮
      */
-    closeButton() {
+    dismissButton() {
         return (
             <TouchableOpacity
                 activeOpacity={1}
@@ -133,7 +133,7 @@ class LoginView extends React.Component {
             <Image source={{uri: Images.loginViewBackgroundIcon}} style={{ flex: 1, alignItems: 'center' }}>
 
                 {/* 上边关闭按钮布局 */}
-                {this.closeButton()}
+                {this.dismissButton()}
 
                 {/* 中间编辑,登录布局 */}
                 {this.loginLayout()}
