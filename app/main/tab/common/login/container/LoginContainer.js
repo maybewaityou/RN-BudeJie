@@ -23,7 +23,9 @@ class LoginContainer extends React.Component {
             <LoginView
                 width={width}
                 canFocus={this.props.canFocus}
-                dismiss={this.props.dismiss}
+                dismiss={() => {
+                    dispatch(dismiss(false));
+                }}
                 login={() => {
                     dispatch(login({userName: 'zhangsan', password: '123'}));
                 }}

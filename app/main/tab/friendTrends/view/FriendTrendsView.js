@@ -24,7 +24,6 @@ class FriendTrendsView extends React.Component {
                 >
                     <LoginContainer
                         canFocus={this.props.canFocus}
-                        dismiss={this.props.dismiss}
                     />
                 </Modal>
                 <Image source={{uri: Images.headerCryIcon}} style={{ width: 48, height: 48, marginBottom: 10 }}/>

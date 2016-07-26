@@ -24,9 +24,6 @@ class FriendTrendsContainer extends React.Component {
                 loginOrRegister={() => {
                     dispatch(modal(!modalVisible));
                 }}
-                dismiss={() => {
-                    dispatch(dismiss(!modalVisible));
-                }}
             />
         );
     }
