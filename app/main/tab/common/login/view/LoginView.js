@@ -30,7 +30,7 @@ class LoginView extends React.Component {
     dismissButton() {
         return (
             <TouchableOpacity
-                activeOpacity={1}
+                activeOpacity={0.8}
                 style={{ alignSelf: 'flex-start', marginTop: 30, marginLeft: 10, padding: 10 }}
                 onPress={this.props.dismiss}
                 onPressIn={() => {
