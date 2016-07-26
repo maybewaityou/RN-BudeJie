@@ -4,6 +4,7 @@ import React from 'react';
 import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import LoginButton from '../components/LoginButton';
+import LoginComponent from '../../../components/LoginComponent';
 import {
     View,
     Image,
@@ -18,7 +19,7 @@ class FriendTrendsView extends React.Component {
     }
 
     onPress() {
-        console.log('== 登录 ==');
+
     }
 
     render() {
