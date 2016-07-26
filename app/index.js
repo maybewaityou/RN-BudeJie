@@ -7,11 +7,12 @@ import FluxExample from './example/flux/fluxExample';
 import CustomExample from './example/customerModulesAndViews/customExample';
 import RootView from './main/RootView';
 
+import LoginComponent from './main/tab/common/login/LoginComponent';
 
 class App extends Component {
     render() {
         return (
-            <RootView />
+            <LoginComponent />
         );
     }
 }

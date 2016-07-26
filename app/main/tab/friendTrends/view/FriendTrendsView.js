@@ -4,7 +4,7 @@ import React from 'react';
 import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import LoginButton from '../components/LoginButton';
-import LoginComponent from '../../../components/LoginComponent';
+import LoginComponent from '../../common/login/LoginComponent';
 import {
     View,
     Image,
