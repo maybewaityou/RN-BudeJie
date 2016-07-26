@@ -13,12 +13,22 @@ class EssenceContainer extends React.Component {
 
     }
 
+    leftBarComponent() {
+        return (
+            <TitleTagLeftComponent
+                onPress={() => {
+                    
+                }}
+            />
+        );
+    }
+
     render() {
         return (
             <Router
                 route={EssenceView}
                 backButtonComponent={BackButtonComponent}
-                leftBarComponent={TitleTagLeftComponent}
+                leftBarComponent={this.leftBarComponent.bind(this)}
                 titleBarComponent={TitleImageComponent}
             />
         );

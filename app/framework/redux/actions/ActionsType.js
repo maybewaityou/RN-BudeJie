@@ -2,9 +2,12 @@
 'use strict';
 
 /* ============================= Action Type Start =============================== */
+// 关注页面
+export const GO_TO_FOLLOW = 'GO_TO_FOLLOW';
 export const MODAL = 'MODAL';
 export const DISMISS = 'DISMISS';
 
+// 登录页面
 export const CAN_FOCUS = 'CAN_FOCUS';
 export const LOGIN = 'LOGIN';
 export const QQ_LOGIN = 'QQ_LOGIN';

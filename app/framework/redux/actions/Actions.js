@@ -2,6 +2,7 @@
 'use strict';
 
 import {
+    GO_TO_FOLLOW,
     MODAL,
     DISMISS,
     CAN_FOCUS,
@@ -15,6 +16,15 @@ import {
 } from './ActionsType';
 
 /* ============================= Action Creator Start =============================== */
+export function goToFollow() {
+    return {
+        type: GO_TO_FOLLOW,
+        payload: {
+
+        }
+    };
+}
+
 export function modal(visible) {
     return {
         type: MODAL,

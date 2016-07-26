@@ -2,6 +2,7 @@
 
 import { combineReducers } from 'redux';
 import {
+    GO_TO_FOLLOW,
     MODAL,
     DISMISS,
     CAN_FOCUS,
@@ -18,6 +19,11 @@ function friendTrendsReducer(state = {
     modalVisible: false
 }, action) {
     switch (action.type) {
+        case GO_TO_FOLLOW:
+            console.log('======>>>>> goToFollow');
+            return {
+                ...state
+            };
         case MODAL:
             console.log('======>>>>> modal');
             return {

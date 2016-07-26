@@ -13,12 +13,22 @@ class NewContainer extends React.Component {
 
     }
 
+    leftBarComponent() {
+        return (
+            <TitleTagLeftComponent
+                onPress={() => {
+                    
+                }}
+            />
+        );
+    }
+
     render() {
         return (
             <Router
                 route={NewView}
                 backButtonComponent={BackButtonComponent}
-                leftBarComponent={TitleTagLeftComponent}
+                leftBarComponent={this.leftBarComponent.bind(this)}
                 titleBarComponent={TitleBarNewComponent}
             />
         );

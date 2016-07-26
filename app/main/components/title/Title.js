@@ -57,6 +57,7 @@ export class TitleTagLeftComponent extends React.Component {
             <TitleLeftImage
                 image={Images.titleEssenceLeftIcon}
                 clickedImage={Images.titleEssenceLeftClickedIcon}
+                onPress={this.props.onPress}
             />
         );
     }
@@ -68,6 +69,7 @@ export class TitleFriendTrendsLeftComponent extends React.Component {
             <TitleLeftImage
                 image={Images.titleFriendTrendsIcon}
                 clickedImage={Images.titleFriendTrendsClickedIcon}
+                onPress={this.props.onPress}
             />
         );
     }
