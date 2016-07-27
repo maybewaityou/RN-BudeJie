@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import styles from '../../../styles/Title';
 import Images from '../../constant/Images';
+import Color from '../../constant/Color';
 import Button from '../Button';
 import {
   Text,
@@ -53,7 +54,16 @@ export class TitleFriendTrendsLeftComponent extends React.Component {
 export class BackButtonComponent extends React.Component {
     render() {
         return (
-            <Text style={styles.titleLeftStyle}>返回</Text>
+            <Button
+                leftImage={Images.backIcon}
+                highlightLeftImage={Images.backClickedIcon}
+                leftImageStyle={{ width: 15, height: 21 }}
+                title='返回'
+                titleColor={Color.defaultTextColor}
+                highlightTitleColor='red'
+                titleStyle={{ fontSize: 16 }}
+                style={{  marginLeft: 10 }}
+            />
         );
     }
 }

@@ -2,8 +2,10 @@
 
 import React from 'react';
 import styles from '../../../../styles/Main';
+import HelloPage from '../../../../example/router/components/HelloPage';
 import {
-    View
+    View,
+    Text
 } from 'react-native';
 
 class EssenceView extends React.Component {
@@ -16,7 +18,13 @@ class EssenceView extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-
+                <Text onPress={() => {
+                    this.props.toRoute({
+                        component: HelloPage
+                    });
+                }}>
+                    alsdkl';askd';askd
+                </Text>
             </View>
         );
     }
