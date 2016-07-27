@@ -45,7 +45,6 @@ class NewContainer extends React.Component {
     }
 }
 
-
 NewContainer.propTypes = {
     dispatch: PropTypes.func.isRequired
 };
