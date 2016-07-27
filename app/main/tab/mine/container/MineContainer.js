@@ -4,23 +4,24 @@ import React from 'react';
 import styles from '../../../../styles/Main';
 import LocalString from '../../../constant/LocalString';
 import Router from '../../../components/Router';
-import { TitleTagLeftComponent, BackButtonComponent, TitleBarTextComponent } from '../../../components/title/Title';
-import MeView from '../view/MeView';
+import { BackButtonComponent, TitleBarTextComponent, MineRightBarComponent } from '../../../components/title/Title';
+import MineView from '../view/MineView';
 
 class MeContainer extends React.Component {
 
     titleBarComponent() {
         return (
-            <TitleBarTextComponent title={LocalString.titleBarMe} />
+            <TitleBarTextComponent title={LocalString.titleBarMine} />
         );
     }
 
     render() {
         return (
             <Router
-                route={MeView}
+                route={MineView}
                 backButtonComponent={BackButtonComponent}
                 titleBarComponent={this.titleBarComponent.bind(this)}
+                rightBarComponent={MineRightBarComponent}
             />
         );
     }

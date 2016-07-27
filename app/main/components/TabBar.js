@@ -10,7 +10,7 @@ import Images from '../constant/Images';
 import LocalString from '../constant/LocalString';
 import EssenceContainer from '../tab/essence/container/EssenceContainer';
 import FriendTrendsContainer from '../tab/friendTrends/container/FriendTrendsContainer';
-import MeContainer from '../tab/me/container/MeContainer';
+import MineContainer from '../tab/mine/container/MineContainer';
 import NewContainer from '../tab/new/container/NewContainer';
 import {
     TabBarIOS
@@ -81,7 +81,7 @@ class TabBar extends React.Component {
 
                 {/* 我 */}
                 <TabBarIOS.Item
-                    title={LocalString.tabBarMe}
+                    title={LocalString.tabBarMine}
                     icon={{ uri: Images.tabBarMeIcon, scale: Constant.tabBarDefaultScale }}
                     selectedIcon={{ uri: Images.tabBarMeSelectedIcon, scale: Constant.tabBarDefaultScale }}
                     selected={this.state.selectedTab === 'me'}
@@ -90,7 +90,7 @@ class TabBar extends React.Component {
                     }}
                 >
                     <Provider store={store}>
-                        <MeContainer />
+                        <MineContainer />
                     </Provider>
                 </TabBarIOS.Item>
             </TabBarIOS>

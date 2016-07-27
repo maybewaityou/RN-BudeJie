@@ -4,7 +4,7 @@ export default LocalString = {
     tabBarEssence: '精华',
     tabBarNew: '新帖',
     tabBarFriendTrends: '关注',
-    tabBarMe: '我',
+    tabBarMine: '我',
     titleBarFriendTrends: '我的关注',
-    titleBarMe: '我的',
+    titleBarMine: '我的',
 };

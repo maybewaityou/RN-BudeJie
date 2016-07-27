@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import styles from '../../../styles/Title';
 import Images from '../../constant/Images';
-import LocalString from '../../constant/LocalString';
 import Button from '../Button';
 import {
   Text,
@@ -83,6 +82,27 @@ export class RightBarComponent extends React.Component {
     render() {
         return (
             <Text style={styles.titleRightStyle}>Right</Text>
+        );
+    }
+}
+
+export class MineRightBarComponent extends React.Component {
+    render() {
+        return (
+            <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', position: 'absolute', right: 10, bottom: -10 }}>
+                <Button
+                    image={Images.moonIcon}
+                    highlightImage={Images.moonClickedIcon}
+                    imageStyle={{ width: 20, height: 20 }}
+                    style={{ padding: 10, paddingRight: 5, paddingBottom: 0 }}
+                />
+                <Button
+                    image={Images.settingIcon}
+                    highlightImage={Images.settingClickedIcon}
+                    imageStyle={{ width: 20, height: 20 }}
+                    style={{ padding: 10, paddingLeft: 5, paddingBottom: 0 }}
+                />
+            </View>
         );
     }
 }
