@@ -6,7 +6,7 @@ import {
     View
 } from 'react-native';
 
-class MeView extends React.Component {
+class MineView extends React.Component {
     constructor(props) {
         super(props);
 
@@ -22,4 +22,4 @@ class MeView extends React.Component {
     }
 }
 
-export default MeView;
+export default MineView;

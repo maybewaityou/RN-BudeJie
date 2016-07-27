@@ -63,7 +63,9 @@ export class BackButtonComponent extends React.Component {
                 highlightTitleColor='red'
                 titleStyle={{ fontSize: 16 }}
                 style={{ marginLeft: 10 }}
-                onPress={this.props.onPress}
+                onPress={() => {
+                    this.props.toBack();
+                }}
             />
         );
     }

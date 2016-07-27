@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from '../../../../styles/Main';
+import { BackButtonComponent } from '../../../components/title/Title';
 import HelloPage from '../../../../example/router/components/HelloPage';
 import {
     View,
@@ -23,8 +24,10 @@ class EssenceView extends React.Component {
                         component: HelloPage
                     });
                 }}>
-                    alsdkl';askd';askd
+                    klasjdkl;asjdl;kj
                 </Text>
+
+
             </View>
         );
     }

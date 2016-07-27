@@ -7,7 +7,7 @@ import Router from '../../../components/Router';
 import { BackButtonComponent, TitleBarTextComponent, MineRightBarComponent } from '../../../components/title/Title';
 import MineView from '../view/MineView';
 
-class MeContainer extends React.Component {
+class MineContainer extends React.Component {
 
     titleBarComponent() {
         return (
@@ -27,4 +27,4 @@ class MeContainer extends React.Component {
     }
 }
 
-export default MeContainer;
+export default MineContainer;
