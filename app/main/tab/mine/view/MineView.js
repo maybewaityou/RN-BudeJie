@@ -13,7 +13,8 @@ import {
     Text,
     TouchableOpacity,
     ScrollView,
-    Modal
+    Modal,
+    PixelRatio
 } from 'react-native';
 
 class MineView extends React.Component {
@@ -44,12 +45,12 @@ class MineView extends React.Component {
         this.renderFooter = this.renderFooter.bind(this);
     }
 
-    renderRow(rowData, sectionID, rowID) {
+    renderRow(rowData) {
         return (
             <View>
                 <TouchableOpacity
                     activeOpacity={0.8}
-                    style={{ backgroundColor: 'white', flexDirection: 'row', alignItems: 'center',  width: this.props.width, height: 44, borderTopWidth: 0.5, borderBottomWidth: 0.5, borderColor: Color.defaultColor }}
+                    style={{ backgroundColor: 'white', flexDirection: 'row', alignItems: 'center',  width: this.props.width, height: 44, borderTopWidth: 1 / PixelRatio.get(), borderBottomWidth: 1 / PixelRatio.get(), borderColor: Color.defaultColor }}
                     onPress={this.props.onItemPress.bind(this, rowData)}
                 >
                     {
@@ -88,7 +89,7 @@ class MineView extends React.Component {
                                 leftImageStyle={{ width: 44, height: 44 }}
                                 highlightTitleColor='red'
                                 titleStyle={{ fontSize: 16 }}
-                                style={{ width: width, height: height, borderTopWidth: 0.5, borderBottomWidth: 0.5, borderLeftWidth: 0.5, borderRightWidth: 0.5, borderColor: Color.defaultColor }}
+                                style={{ width: width, height: height, borderTopWidth: 1 / PixelRatio.get(), borderBottomWidth: 1 / PixelRatio.get(), borderLeftWidth: 1 / PixelRatio.get(), borderRightWidth: 1 / PixelRatio.get(), borderColor: Color.defaultColor }}
                                 onPress={this.props.onFooterItemPress.bind(this, rowData)}
                             />
                         );

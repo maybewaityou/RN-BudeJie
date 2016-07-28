@@ -13,7 +13,7 @@ export default StyleSheet.create({
     },
     commonText: {
         fontSize: 18,
-        textAlign: 'center'
+        textAlign: 'center',
     },
     titleLayout: {
         marginTop: 50,

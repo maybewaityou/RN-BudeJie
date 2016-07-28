@@ -92,7 +92,7 @@ class LoginView extends React.Component {
                             this.setState({isUserNameFocus: false});
                         }}
                         onSubmitEditing={() => {
-                            this.setState({isPasswordFocus: true});
+                            this.setState({isPasswordFocus: false});
                         }}
                     />
                     <TextInput
