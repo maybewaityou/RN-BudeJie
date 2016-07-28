@@ -54,6 +54,7 @@ class MineView extends React.Component {
                     <Text style={[styles.commonText, { fontSize: 16, marginLeft: 10 }]}>
                         {rowData.title}
                     </Text>
+                    <Image source={{uri: Images.arrow}} style={{ position: 'absolute', top: 12, right: 10, marginRight: 10, width: 15, height: 21 }} />
                 </TouchableOpacity>
                 <View
                     style={{ marginTop: 20 }}
