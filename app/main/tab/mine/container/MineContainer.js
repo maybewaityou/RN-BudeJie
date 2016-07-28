@@ -8,8 +8,11 @@ import MineView from '../view/MineView';
 
 class MineContainer extends React.Component {
     render() {
+        const { dispatch } = this.props;
         return (
-            <MineView />
+            <MineView
+                
+            />
         );
     }
 }

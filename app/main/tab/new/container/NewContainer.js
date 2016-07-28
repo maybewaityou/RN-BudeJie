@@ -8,8 +8,11 @@ import NewView from '../view/NewView';
 
 class NewContainer extends React.Component {
     render() {
+        const { dispatch } = this.props;
         return (
-            <NewView />
+            <NewView
+
+            />
         );
     }
 }
@@ -19,7 +22,7 @@ NewContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
-    const { essenceAndNewReducer } = state;
+    const { mineReducer } = state;
     return {
 
     };

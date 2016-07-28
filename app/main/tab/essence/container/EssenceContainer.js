@@ -26,6 +26,7 @@ class EssenceContainer extends React.Component {
     }
 
     render() {
+        const { dispatch } = this.props;
         return (
             <EssenceView
                 onPress={() => {

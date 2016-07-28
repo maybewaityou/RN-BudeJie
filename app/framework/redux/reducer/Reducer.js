@@ -56,6 +56,20 @@ function friendTrendsReducer(state = {
     }
 }
 
+function mineReducer(state = {
+
+}, action) {
+    switch (action.type) {
+        case '':
+
+            return {
+                ...state
+            };
+        default:
+            return state;
+    }
+}
+
 function loginReducer(state = {
     canFocus: true,
     userInfo: {}
@@ -111,6 +125,7 @@ function loginReducer(state = {
 const rootReducer = combineReducers({
     essenceAndNewReducer,
     friendTrendsReducer,
+    mineReducer,
     loginReducer
 });
 

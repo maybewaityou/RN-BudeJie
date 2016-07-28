@@ -7,6 +7,11 @@ export const GO_TO_TAG = 'GO_TO_TAG';
 
 // 关注页面
 export const GO_TO_FOLLOW = 'GO_TO_FOLLOW';
+
+// 我的页面
+export const REQUEST_FOOTER = 'REQUEST_FOOTER';
+
+// 登录弹出
 export const MODAL = 'MODAL';
 export const DISMISS = 'DISMISS';
 
