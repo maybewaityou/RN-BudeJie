@@ -3,10 +3,12 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchData } from '../../../../framework/redux/actions/Actions';
+import { TOPIC_ALL_REFRESH } from '../../../../framework/redux/actions/ActionsType';
 import Dimensions from 'Dimensions';
 import styles from '../../../../styles/Main';
 import { BackButtonComponent } from '../../../components/title/Title';
 import EssenceView from '../view/EssenceView';
+import TopicType from '../../common/cell/TopicType';
 import {
     View
 } from 'react-native';
@@ -22,7 +24,7 @@ class EssenceContainer extends React.Component {
 
     componentDidMount() {
         const { dispatch } = this.props;
-        dispatch(fetchData('a=square&c=topic'));
+        dispatch(fetchData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
     }
 
     backButtonComponent() {
@@ -37,7 +39,8 @@ class EssenceContainer extends React.Component {
 
     render() {
         const { dispatch, dataList } = this.props;
-        if (!dataList) {
+
+        if (dataList.length === 0) {
             return (<View/>);
         }
         return (
@@ -63,7 +66,7 @@ EssenceContainer.propTypes = {
 function mapStateToProps(state) {
     const { networkReducer } = state;
     return {
-        dataList: networkReducer.responseData.square_list
+        dataList: networkReducer.topicAllList
     };
 }
 

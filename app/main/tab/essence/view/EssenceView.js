@@ -19,6 +19,8 @@ class EssenceView extends React.Component {
             rowHasChanged: (r1, r2) => r1 !== r2
         });
 
+        console.log('this.props.dataList======', this.props.dataList);
+
         this.state = {
             dataSource: dataSource.cloneWithRows(this.props.dataList)
         };
@@ -40,6 +42,8 @@ class EssenceView extends React.Component {
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
+                    initialListSize={this.props.dataList.size}
+                    pageSize={20}
                     contentInset={{ bottom: 49 }}
                     style={{ width: this.props.width }}
                 />

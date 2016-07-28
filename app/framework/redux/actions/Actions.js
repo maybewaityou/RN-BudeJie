@@ -29,9 +29,9 @@ function requestData(url) {
     };
 }
 
-function receiveData(url, responseData) {
+function receiveData(url, type, responseData) {
     return {
-        type: RECEIVED,
+        type: type,
         payload: {
             url: url,
             responseData
@@ -39,19 +39,15 @@ function receiveData(url, responseData) {
     };
 }
 
-export function fetchData(subUrl) {
+export function fetchData(subUrl, type) {
     return dispatch => {
         dispatch(requestData(subUrl));
         return fetch(`http://api.budejie.com/api/api_open.php?${subUrl}`)
             .then(response => response.json())
-            .then(json => dispatch(receiveData(subUrl, json)));
+            .then(json => dispatch(receiveData(subUrl, type, json)));
     };
 }
 
-export function requestSquare(url) {
-
-    return ;
-}
 export function goToTag() {
     return {
         type: GO_TO_TAG,

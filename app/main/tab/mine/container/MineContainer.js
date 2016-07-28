@@ -3,6 +3,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { modal, dismiss, weatherCanFocus, fetchData } from '../../../../framework/redux/actions/Actions';
+import { REQUEST_SQUARE } from '../../../../framework/redux/actions/ActionsType';
 import Dimensions from 'Dimensions';
 import styles from '../../../../styles/Main';
 import LocalString from '../../../constant/LocalString';
@@ -23,7 +24,7 @@ class MineContainer extends React.Component {
 
     componentDidMount() {
         const { dispatch } = this.props;
-        dispatch(fetchData('a=square&c=topic'));
+        dispatch(fetchData('a=square&c=topic', REQUEST_SQUARE));
     }
 
     backButtonComponent() {
@@ -59,11 +60,11 @@ class MineContainer extends React.Component {
     }
 
     render() {
-        const { dispatch, responseData, modalVisible, canFocus } = this.props;
+        const { dispatch, dataList, modalVisible, canFocus } = this.props;
         return (
             <MineView
                 width={width}
-                dataList={responseData.square_list}
+                dataList={dataList}
                 modalVisible={modalVisible}
                 canFocus={canFocus}
                 onItemPress={this.onItemPress}
@@ -77,7 +78,7 @@ class MineContainer extends React.Component {
 }
 
 MineContainer.propTypes = {
-    responseData: PropTypes.object,
+    dataList: PropTypes.array,
     modalVisible: PropTypes.bool,
     canFocus: PropTypes.bool,
     dispatch: PropTypes.func.isRequired
@@ -86,7 +87,7 @@ MineContainer.propTypes = {
 function mapStateToProps(state) {
     const { networkReducer, friendTrendsReducer, loginReducer } = state;
     return {
-        responseData: networkReducer.responseData,
+        dataList: networkReducer.squareList,
         modalVisible: friendTrendsReducer.modalVisible,
         canFocus: loginReducer.canFocus
     };

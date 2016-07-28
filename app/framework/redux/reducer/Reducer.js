@@ -15,12 +15,24 @@ import {
     GO_TO_FORGET_PASSWORD,
     REGISTER,
     REQUESTING,
-    RECEIVED
+    RECEIVED,
+    REQUEST_SQUARE,
+    TOPIC_ALL_REFRESH,
+    TOPIC_ALL_LOAD_MORE,
+    TOPIC_PICTURE_REFRESH,
+    TOPIC_PICTURE_LOAD_MORE,
+    TOPIC_VIDEO_REFRESH,
+    TOPIC_VIDEO_LOAD_MORE,
+    TOPIC_VOICE_REFRESH,
+    TOPIC_VOICE_LOAD_MORE,
+    TOPIC_WORD_REFRESH,
+    TOPIC_WORD_LOAD_MORE
 } from '../actions/ActionsType';
 
 function networkReducer(state = {
     url: '',
-    responseData: {}
+    squareList: [],
+    topicAllList: [],
 }, action) {
     switch (action.type) {
         case REQUESTING:
@@ -29,12 +41,19 @@ function networkReducer(state = {
                 ...state,
                 url: action.payload.url
             };
-        case RECEIVED:
-        console.log('======>>>>> received');
+        case REQUEST_SQUARE:
+            console.log('======>>>>> topic_all_refresh');
             return {
                 ...state,
                 url: action.payload.url,
-                responseData: action.payload.responseData
+                squareList: action.payload.responseData.square_list
+            }
+        case TOPIC_ALL_REFRESH:
+            console.log('======>>>>> topic_all_refresh');
+            return {
+                ...state,
+                url: action.payload.url,
+                topicAllList: action.payload.responseData.list
             }
         default:
             return state;
