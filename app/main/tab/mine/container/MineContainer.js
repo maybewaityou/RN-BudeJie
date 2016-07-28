@@ -3,10 +3,12 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { modal, dismiss, weatherCanFocus, fetchData } from '../../../../framework/redux/actions/Actions';
+import Dimensions from 'Dimensions';
 import styles from '../../../../styles/Main';
 import LocalString from '../../../constant/LocalString';
+import { TitleBarTextComponent, BackButtonComponent } from '../../../components/title/Title';
 import MineView from '../view/MineView';
-import Dimensions from 'Dimensions';
+import WebViewComponent from '../../common/WebViewComponent';
 
 const { width, height } = Dimensions.get('window');
 
@@ -14,6 +16,7 @@ class MineContainer extends React.Component {
     constructor(props) {
         super(props);
 
+        this.backButtonComponent = this.backButtonComponent.bind(this);
         this.onItemPress = this.onItemPress.bind(this);
         this.onFooterItemPress = this.onFooterItemPress.bind(this);
     }
@@ -23,17 +26,36 @@ class MineContainer extends React.Component {
         dispatch(fetchData('a=square&c=topic'));
     }
 
+    backButtonComponent() {
+        return (
+            <BackButtonComponent
+                onPress={() => {
+                    this.props.toBack();
+                }}
+            />
+        );
+    }
+
     onItemPress(rowData, event) {
-        console.log('== item ==>>> ', rowData);
         const { dispatch, modalVisible } = this.props;
         if (rowData.type === 'login') {
             dispatch(modal(!modalVisible));
+        } else if (rowData.type === 'download_offline') {
+            console.log('== item ==>>> download_offline');
         }
     }
 
     onFooterItemPress(rowData, event) {
         console.log('== footer rowData ==>>> ', rowData);
-        
+        this.props.toRoute({
+            component: WebViewComponent,
+            titleComponent: TitleBarTextComponent,
+            titleProps: {
+                title: rowData.name
+            },
+            data: rowData.url,
+            leftCorner: this.backButtonComponent
+        });
     }
 
     render() {
