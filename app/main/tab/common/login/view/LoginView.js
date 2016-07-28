@@ -20,7 +20,8 @@ class LoginView extends React.Component {
         this.state = {
             closeImage: Images.loginCloseIcon,
             registerIcon: Images.loginRegisterIcon,
-            isFocus: false,
+            isUserNameFocus: false,
+            isPasswordFocus: false,
         };
     }
 
@@ -77,32 +78,40 @@ class LoginView extends React.Component {
                 <Image source={{uri: Images.loginEditBackgroundIcon}} style={{ width: 266, height: 92 }} >
                     <TextInput
                         placeholder='用户名'
-                        placeholderTextColor={this.state.isFocus ? 'white' : 'gray'}
+                        placeholderTextColor={this.state.isUserNameFocus ? 'white' : 'gray'}
                         selectionColor='white'
                         clearButtonMode='while-editing'
                         autoFocus={this.props.canFocus}
                         enablesReturnKeyAutomatically={true}
+                        keyboardType='ascii-capable'
                         style={{ marginLeft: 10, marginTop: 5, color: 'white', height: 40 }}
                         onFocus={() => {
-                            this.setState({isFocus: true});
+                            this.setState({isUserNameFocus: true});
                         }}
                         onBlur={() => {
-                            this.setState({isFocus: false});
+                            this.setState({isUserNameFocus: false});
+                        }}
+                        onSubmitEditing={() => {
+                            this.setState({isPasswordFocus: true});
                         }}
                     />
                     <TextInput
                         placeholder='密码'
-                        placeholderTextColor={!this.state.isFocus ? 'white' : 'gray'}
+                        placeholderTextColor={this.state.isPasswordFocus ? 'white' : 'gray'}
                         selectionColor='white'
                         clearButtonMode='while-editing'
                         secureTextEntry={true}
                         enablesReturnKeyAutomatically={true}
                         style={{ marginLeft: 10, marginTop: 5, color: 'white', height: 40 }}
+                        keyboardType='email-address'
                         onFocus={() => {
-                            this.setState({isFocus: false});
+                            this.setState({isPasswordFocus: true});
                         }}
                         onBlur={() => {
-                            this.setState({isFocus: true});
+                            this.setState({isPasswordFocus: false});
+                        }}
+                        onSubmitEditing={() => {
+                            this.setState({isPasswordFocus: false});
                         }}
                     />
                 </Image>
