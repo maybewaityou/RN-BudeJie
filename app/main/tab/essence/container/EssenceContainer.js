@@ -1,5 +1,3 @@
-/* jshint esversion: 6 */
-
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchData } from '../../../../framework/redux/actions/Actions';
@@ -13,9 +11,9 @@ import {
     View
 } from 'react-native';
 
-const { width, height } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
-class EssenceContainer extends React.Component {
+class EssenceContainer extends Component {
     constructor(props) {
         super(props);
 
@@ -41,18 +39,12 @@ class EssenceContainer extends React.Component {
         const { dispatch, dataList } = this.props;
 
         if (dataList.length === 0) {
-            return (<View/>);
+            return (<View />);
         }
         return (
             <EssenceView
                 width={width}
                 dataList={dataList}
-                onPress={() => {
-                    this.props.toRoute({
-                        component: HelloPage,
-                        leftCorner: this.backButtonComponent
-                    });
-                }}
             />
         );
     }
