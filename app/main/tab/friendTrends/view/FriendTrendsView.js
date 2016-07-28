@@ -17,8 +17,8 @@ class FriendTrendsView extends React.Component {
         return (
             <View style={styles.container}>
                 <Modal
-                    animationType={this.props.animationType}
-                    transparent={this.props.transparent}
+                    animationType='slide'
+                    transparent={false}
                     visible={this.props.modalVisible}
                     onShow={this.props.onShow}
                 >

@@ -12,8 +12,6 @@ class FriendTrendsContainer extends React.Component {
         const { dispatch, modalVisible, canFocus } = this.props;
         return (
             <FriendTrendsView
-                animationType='slide'
-                transparent={false}
                 modalVisible={modalVisible}
                 canFocus={canFocus}
                 onShow={() => {

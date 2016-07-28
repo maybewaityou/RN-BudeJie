@@ -5,13 +5,15 @@ import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Color from '../../../constant/Color';
 import Button from '../../../components/Button';
+import LoginContainer from '../../common/login/container/LoginContainer';
 import {
     View,
     ListView,
     Image,
     Text,
     TouchableOpacity,
-    ScrollView
+    ScrollView,
+    Modal
 } from 'react-native';
 
 class MineView extends React.Component {
@@ -20,10 +22,12 @@ class MineView extends React.Component {
 
         const data = [
             {
+                type: 'login',
                 image: Images.random,
                 title: '登录/注册'
             },
             {
+                type: 'download_offline',
                 title: '离线下载'
             }
         ];
@@ -97,6 +101,16 @@ class MineView extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                <Modal
+                    animationType='slide'
+                    transparent={false}
+                    visible={this.props.modalVisible}
+                    onShow={this.props.onShow}
+                >
+                    <LoginContainer
+                        canFocus={this.props.canFocus}
+                    />
+                </Modal>
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
