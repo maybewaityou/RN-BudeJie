@@ -106,12 +106,14 @@ export class MineRightBarComponent extends React.Component {
                     highlightImage={Images.moonClickedIcon}
                     imageStyle={{ width: 20, height: 20 }}
                     style={{ padding: 10, paddingRight: 5, paddingBottom: 0 }}
+                    onPress={this.props.onMoonPress}
                 />
                 <Button
                     image={Images.settingIcon}
                     highlightImage={Images.settingClickedIcon}
                     imageStyle={{ width: 20, height: 20 }}
                     style={{ padding: 10, paddingLeft: 5, paddingBottom: 0 }}
+                    onPress={this.props.onSettingPress}
                 />
             </View>
         );
