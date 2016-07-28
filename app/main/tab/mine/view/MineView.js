@@ -69,7 +69,7 @@ class MineView extends React.Component {
     }
 
     renderFooter() {
-        if (this.props.squareList) {
+        if (this.props.dataList) {
             const maxColumns = 4;
             const width = this.props.width / maxColumns;
             const height = width;
@@ -78,7 +78,7 @@ class MineView extends React.Component {
                     style={{ backgroundColor: 'white' }}
                     contentContainerStyle={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}
                 >
-                    {this.props.squareList.map(rowData => {
+                    {this.props.dataList.map(rowData => {
                         return (
                             <Button
                                 key={rowData.id}

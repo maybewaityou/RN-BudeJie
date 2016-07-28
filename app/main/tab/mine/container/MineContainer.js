@@ -63,7 +63,7 @@ class MineContainer extends React.Component {
         return (
             <MineView
                 width={width}
-                squareList={responseData.square_list}
+                dataList={responseData.square_list}
                 modalVisible={modalVisible}
                 canFocus={canFocus}
                 onItemPress={this.onItemPress}
