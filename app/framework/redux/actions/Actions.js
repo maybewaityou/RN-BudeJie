@@ -13,10 +13,45 @@ import {
     TECENT_LOGIN,
     GO_TO_REGISTER,
     GO_TO_FORGET_PASSWORD,
-    REGISTER
+    REGISTER,
+    REQUEST_SQUARE,
+    REQUESTING,
+    RECEIVED
 } from './ActionsType';
 
 /* ============================= Action Creator Start =============================== */
+function requestData(url) {
+    return {
+        type: REQUESTING,
+        payload: {
+            url: url
+        }
+    };
+}
+
+function receiveData(url, responseData) {
+    return {
+        type: RECEIVED,
+        payload: {
+            url: url,
+            responseData
+        }
+    };
+}
+
+export function fetchData(subUrl) {
+    return dispatch => {
+        dispatch(requestData(subUrl));
+        return fetch(`http://api.budejie.com/api/api_open.php?${subUrl}`)
+            .then(response => response.json())
+            .then(json => dispatch(receiveData(subUrl, json)));
+    };
+}
+
+export function requestSquare(url) {
+
+    return ;
+}
 export function goToTag() {
     return {
         type: GO_TO_TAG,

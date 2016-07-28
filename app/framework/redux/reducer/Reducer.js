@@ -13,8 +13,33 @@ import {
     TECENT_LOGIN,
     GO_TO_REGISTER,
     GO_TO_FORGET_PASSWORD,
-    REGISTER
+    REGISTER,
+    REQUESTING,
+    RECEIVED
 } from '../actions/ActionsType';
+
+function networkReducer(state = {
+    url: '',
+    responseData: {}
+}, action) {
+    switch (action.type) {
+        case REQUESTING:
+            console.log('======>>>>> requesting');
+            return {
+                ...state,
+                url: action.payload.url
+            };
+        case RECEIVED:
+        console.log('======>>>>> received');
+            return {
+                ...state,
+                url: action.payload.url,
+                responseData: action.payload.responseData
+            }
+        default:
+            return state;
+    }
+}
 
 function essenceAndNewReducer(state = {
 
@@ -123,6 +148,7 @@ function loginReducer(state = {
 }
 
 const rootReducer = combineReducers({
+    networkReducer,
     essenceAndNewReducer,
     friendTrendsReducer,
     mineReducer,

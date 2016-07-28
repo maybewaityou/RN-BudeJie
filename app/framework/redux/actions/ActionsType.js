@@ -2,6 +2,10 @@
 'use strict';
 
 /* ============================= Action Type Start =============================== */
+// 网络请求
+export const REQUESTING = 'REQUESTING';
+export const RECEIVED = 'RECEIVED';
+
 // 精华页面 && 新帖页面
 export const GO_TO_TAG = 'GO_TO_TAG';
 
@@ -9,7 +13,7 @@ export const GO_TO_TAG = 'GO_TO_TAG';
 export const GO_TO_FOLLOW = 'GO_TO_FOLLOW';
 
 // 我的页面
-export const REQUEST_FOOTER = 'REQUEST_FOOTER';
+export const REQUEST_SQUARE = 'REQUEST_SQUARE';
 
 // 登录弹出
 export const MODAL = 'MODAL';

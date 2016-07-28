@@ -22,7 +22,8 @@ class Button extends React.Component {
         return (
             <TouchableOpacity
                 activeOpacity={1}
-                style={this.props.style}
+                style={[{ justifyContent: 'center', alignItems: 'center' }, this.props.style]}
+                isVertical={this.props.isVertical}
                 onPress={this.props.onPress}
                 onPressIn={() => {
                     this.setState({
@@ -39,9 +40,9 @@ class Button extends React.Component {
                     });
                 }}
             >
-                <Image source={{uri: this.state.image}} style={[{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }, this.props.imageStyle]}>
+                <Image source={{uri: this.state.image}} style={[{ flexDirection: this.props.isVertical ? 'column' : 'row', justifyContent: this.props.isVertical ? 'center' : 'space-around', alignItems: 'center' }, this.props.imageStyle]}>
                     <Image source={{uri: this.state.leftImage}} style={this.props.leftImageStyle} />
-                    <Text style={[{ color: this.state.titleColor, fontSize: 18, textAlign: 'center', backgroundColor: '#00000000' }, this.props.titleStyle]}>{this.props.title}</Text>
+                    <Text style={[{ color: this.state.titleColor, fontSize: 18, textAlign: 'center', backgroundColor: '#00000000', marginTop: this.props.isVertical ? 10 : 0 }, this.props.titleStyle]}>{this.props.title}</Text>
                 </Image>
             </TouchableOpacity>
         );
