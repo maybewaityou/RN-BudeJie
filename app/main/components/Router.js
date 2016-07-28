@@ -12,14 +12,18 @@ class Router extends React.Component {
                     component: this.props.route,
                     passProps: this.props.passProps,
                     leftCorner: this.props.leftBarComponent,
+                    leftCornerProps: this.props.leftBarComponentProps,
                     titleComponent: this.props.titleBarComponent,
+                    titleProps: this.props.titleProps,
                     rightCorner: this.props.rightBarComponent,
+                    rightCornerProps: this.props.rightBarComponentProps
                 }}
                 handleBackAndroid={true}
                 backButtonComponent={this.props.backButtonComponent}
                 backButtonProps={this.props.backButtonProps}
                 headerStyle={{backgroundColor: Color.titleBackgroundColor}}
                 statusBarColor='black'
+                customAction={this.props.customAction}
             />
         );
     }
