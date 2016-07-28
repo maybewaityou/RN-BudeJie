@@ -69,6 +69,16 @@ export class BackButtonComponent extends React.Component {
     }
 }
 
+export function backButtonComponent() {
+    return (
+        <BackButtonComponent
+            onPress={() => {
+                this.props.toBack();
+            }}
+        />
+    );
+}
+
 export class TitleImageComponent extends React.Component {
     render() {
         return (

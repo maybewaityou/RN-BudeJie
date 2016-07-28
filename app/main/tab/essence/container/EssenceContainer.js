@@ -2,25 +2,24 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { goToTag } from '../../../../framework/redux/actions/Actions';
 import styles from '../../../../styles/Main';
-import Router from '../../../components/Router';
-import { TitleTagLeftComponent, BackButtonComponent, TitleImageComponent } from '../../../components/title/Title';
+import { BackButtonComponent } from '../../../components/title/Title';
 import EssenceView from '../view/EssenceView';
+
+import HelloPage from '../../../../example/router/components/HelloPage';
 
 class EssenceContainer extends React.Component {
     constructor(props) {
         super(props);
 
-
+        this.backButtonComponent = this.backButtonComponent.bind(this);
     }
 
-    leftBarComponent() {
-        const { dispatch } = this.props;
+    backButtonComponent() {
         return (
-            <TitleTagLeftComponent
+            <BackButtonComponent
                 onPress={() => {
-                    dispatch(goToTag());
+                    this.props.toBack();
                 }}
             />
         );
@@ -28,11 +27,13 @@ class EssenceContainer extends React.Component {
 
     render() {
         return (
-            <Router
-                route={EssenceView}
-                backButtonComponent={BackButtonComponent}
-                leftBarComponent={this.leftBarComponent.bind(this)}
-                titleBarComponent={TitleImageComponent}
+            <EssenceView
+                onPress={() => {
+                    this.props.toRoute({
+                        component: HelloPage,
+                        leftCorner: this.backButtonComponent
+                    });
+                }}
             />
         );
     }
