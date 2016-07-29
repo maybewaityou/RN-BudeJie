@@ -5,6 +5,7 @@ import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Color from '../../../constant/Color';
 import CellTopView from '../../common/cell/CellTopView';
+import CellBottomView from '../../common/cell/CellBottomView';
 import {
     View,
     Text,
@@ -41,10 +42,16 @@ class EssenceView extends React.Component {
 
     renderRow(rowData) {
         return (
-            <CellTopView
-                data={rowData}
-                width={this.props.width}
-            />
+            <View style={{ backgroundColor: 'white' }}>
+                <CellTopView
+                    data={rowData}
+                    width={this.props.width}
+                />
+                <CellBottomView
+                    data={rowData}
+                    width={this.props.width}
+                />
+            </View>
         );
     }
 

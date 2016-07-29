@@ -11,9 +11,9 @@ import {
 class CellTopView extends Component {
     render() {
         return (
-            <View style={[styles.container, { backgroundColor: 'white', alignItems: 'flex-start' }]}>
+            <View style={[{ alignItems: 'flex-start' }, this.props.style]}>
                 <View style={{ flexDirection: 'row',  marginTop: 10, marginLeft: 10, height: 50, width: this.props.width - 20 }}>
-                    <Image source={{uri: this.props.data.profile_image}} style={{ backgroundColor: 'blue', borderRadius: 25, width: 50, height: 50 }}/>
+                    <Image source={{uri: this.props.data.profile_image}} style={{ borderRadius: 25, width: 50, height: 50 }}/>
                     <View style={{ flexDirection: 'column', marginLeft: 10 }}>
                         <Text style={{ fontSize: 16, flex: 1 }}>{this.props.data.name}</Text>
                         <Text style={{ fontSize: 14, flex: 1 }}>{this.props.data.created_at}</Text>
