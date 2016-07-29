@@ -45,6 +45,30 @@ class EssenceContainer extends Component {
             <EssenceView
                 width={width}
                 dataList={dataList}
+                handleMorePress={(rowData) => {
+                    console.log('=====>>>>> handleMorePress', rowData);
+                }}
+                showBigPicture={(rowData) => {
+                    console.log('=====>>>>> showBigPicture', rowData);
+                }}
+                startVideo={(rowData) => {
+                    console.log('=====>>>>> startVideo', rowData);
+                }}
+                startVoice={(rowData) => {
+                    console.log('=====>>>>> startVoice', rowData);
+                }}
+                handleDingPress={(rowData) => {
+                    console.log('=====>>>>> handleDingPress', rowData);
+                }}
+                handleCaiPress={(rowData) => {
+                    console.log('=====>>>>> handleCaiPress', rowData);
+                }}
+                handleSharePress={(rowData) => {
+                    console.log('=====>>>>> handleSharePress', rowData);
+                }}
+                handleCommentPress={(rowData) => {
+                    console.log('=====>>>>> handleCommentPress', rowData);
+                }}
             />
         );
     }

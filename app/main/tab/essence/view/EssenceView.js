@@ -49,10 +49,14 @@ class EssenceView extends React.Component {
                 <CellTopView
                     data={rowData}
                     width={this.props.width}
+                    onPress={this.props.handleMorePress.bind(this, rowData)}
                 />
                 <CellCenterView
                     data={rowData}
                     width={this.props.width}
+                    showBigPicture={this.props.showBigPicture.bind(this, rowData)}
+                    startVideo={this.props.startVideo.bind(this, rowData)}
+                    startVoice={this.props.startVoice.bind(this, rowData)}
                 />
                 <CellHotCommentView
                     data={rowData}
@@ -61,6 +65,10 @@ class EssenceView extends React.Component {
                 <CellBottomView
                     data={rowData}
                     width={this.props.width}
+                    handleDingPress={this.props.handleDingPress.bind(this, rowData)}
+                    handleCaiPress={this.props.handleCaiPress.bind(this, rowData)}
+                    handleSharePress={this.props.handleSharePress.bind(this, rowData)}
+                    handleCommentPress={this.props.handleCommentPress.bind(this, rowData)}
                 />
             </View>
         );
