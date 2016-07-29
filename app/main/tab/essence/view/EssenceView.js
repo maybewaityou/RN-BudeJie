@@ -32,20 +32,12 @@ class EssenceView extends React.Component {
 
         this.renderRow = this.renderRow.bind(this);
         this.renderSeparator = this.renderSeparator.bind(this);
-    }
-
-    renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
-        return (
-            <View
-                key={rowID}
-                style={{ backgroundColor: Color.defaultBackgroundColor, width: this.props.width, height: 10 }}
-            />
-        );
+        this.renderFooter = this.renderFooter.bind(this);
     }
 
     renderRow(rowData) {
         return (
-            <View style={{ backgroundColor: 'white' }}>
+            <View style={{ backgroundColor: 'white', overflow:'hidden' }}>
                 <CellTopView
                     data={rowData}
                     width={this.props.width}
@@ -74,6 +66,21 @@ class EssenceView extends React.Component {
         );
     }
 
+    renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
+        return (
+            <View
+                key={rowID}
+                style={{ backgroundColor: Color.defaultBackgroundColor, width: this.props.width, height: 10 }}
+            />
+        );
+    }
+
+    renderFooter() {
+        // return (
+        //
+        // );
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -81,10 +88,13 @@ class EssenceView extends React.Component {
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
                     renderSeparator={this.renderSeparator}
-                    initialListSize={this.props.dataList.size}
+                    renderFooter={this.renderFooter}
+                    initialListSize={this.props.dataList.length}
                     pageSize={20}
                     contentInset={{ bottom: 49 }}
                     style={{ width: this.props.width }}
+                    onEndReachedThreshold={1}
+                    onEndReached={this.props.onEndReached}
                 />
             </View>
         );

@@ -36,9 +36,9 @@ class EssenceContainer extends Component {
     }
 
     render() {
-        const { dispatch, dataList } = this.props;
+        const { dispatch, dataList, dataInfo } = this.props;
 
-        if (dataList.length === 0) {
+        if (!dataList) {
             return (<View />);
         }
         return (
@@ -69,6 +69,10 @@ class EssenceContainer extends Component {
                 handleCommentPress={(rowData) => {
                     console.log('=====>>>>> handleCommentPress', rowData);
                 }}
+                onEndReached={() => {
+                    console.log('=====>>>>> onEndReached');
+                    dispatch(fetchData(`a=list&c=data&type=${TopicType.All}&maxtime=${dataInfo.maxtime}`, TOPIC_ALL_LOAD_MORE));
+                }}
             />
         );
     }
@@ -76,13 +80,15 @@ class EssenceContainer extends Component {
 
 EssenceContainer.propTypes = {
     dataList: PropTypes.array,
+    dataInfo: PropTypes.object,
     dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
     const { networkReducer } = state;
     return {
-        dataList: networkReducer.topicAllList
+        dataList: networkReducer.responseData.list,
+        dataInfo: networkReducer.responseData.info
     };
 }
 
