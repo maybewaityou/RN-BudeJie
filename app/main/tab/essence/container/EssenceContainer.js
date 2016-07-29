@@ -8,7 +8,8 @@ import { BackButtonComponent } from '../../../components/title/Title';
 import EssenceView from '../view/EssenceView';
 import TopicType from '../../common/cell/TopicType';
 import {
-    View
+    View,
+    Text
 } from 'react-native';
 
 const { width } = Dimensions.get('window');
@@ -38,7 +39,13 @@ class EssenceContainer extends Component {
     render() {
         const { dispatch, dataList, dataInfo, isRefreshing } = this.props;
         if (dataList.length === 0) {
-            return (<View />);
+            return (
+                <View style={styles.container}>
+                    <Text style={{ fontSize: 16 }}>
+                        加载中, 请稍后...
+                    </Text>
+                </View>
+            );
         }
         return (
             <EssenceView
