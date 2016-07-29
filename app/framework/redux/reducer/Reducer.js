@@ -32,7 +32,8 @@ import {
 function networkReducer(state = {
     url: '',
     squareList: [],
-    responseData: {},
+    topicAllList: [],
+    topicInfo: {}
 }, action) {
     switch (action.type) {
         case REQUESTING:
@@ -49,11 +50,20 @@ function networkReducer(state = {
                 squareList: action.payload.responseData.square_list
             }
         case TOPIC_ALL_REFRESH:
-            console.log('======>>>>> topic_all_refresh', action.payload.responseData);
+            console.log('======>>>>> topic_all_refresh');
             return {
                 ...state,
                 url: action.payload.url,
-                responseData: action.payload.responseData
+                topicAllList: action.payload.responseData.list,
+                topicInfo: action.payload.responseData.info
+            }
+        case TOPIC_ALL_LOAD_MORE:
+            console.log('======>>>>> topic_all_load_more');
+            return {
+                ...state,
+                url: action.payload.url,
+                topicAllList: [...state.topicAllList, ...action.payload.responseData.list],
+                topicInfo: action.payload.responseData.info
             }
         default:
             return state;

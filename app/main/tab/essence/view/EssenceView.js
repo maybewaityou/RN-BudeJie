@@ -20,15 +20,7 @@ class EssenceView extends React.Component {
     constructor(props) {
         super(props);
 
-        var dataSource = new ListView.DataSource({
-            rowHasChanged: (r1, r2) => r1 !== r2
-        });
-
         console.log('this.props.dataList======', this.props.dataList);
-
-        this.state = {
-            dataSource: dataSource.cloneWithRows(this.props.dataList)
-        };
 
         this.renderRow = this.renderRow.bind(this);
         this.renderSeparator = this.renderSeparator.bind(this);
@@ -76,12 +68,22 @@ class EssenceView extends React.Component {
     }
 
     renderFooter() {
-        // return (
-        //
-        // );
+        return (
+            <View style={{ justifyContent: 'center', alignItems: 'center', paddingBottom: 10 }}>
+                <Text style={{ fontSize: 16 }}>
+                    正在加载, 请稍后...
+                </Text>
+            </View>
+        );
     }
 
     render() {
+        var dataSource = new ListView.DataSource({
+            rowHasChanged: (r1, r2) => r1 !== r2
+        });
+        this.state = {
+            dataSource: dataSource.cloneWithRows(this.props.dataList)
+        };
         return (
             <View style={styles.container}>
                 <ListView
