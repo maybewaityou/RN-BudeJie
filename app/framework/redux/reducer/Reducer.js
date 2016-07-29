@@ -16,6 +16,8 @@ import {
     REGISTER,
     REQUESTING,
     RECEIVED,
+    REFRESHING,
+    REFRESHED,
     REQUEST_SQUARE,
     TOPIC_ALL_REFRESH,
     TOPIC_ALL_LOAD_MORE,
@@ -31,16 +33,26 @@ import {
 
 function networkReducer(state = {
     url: '',
+    isRequesting: false,
     squareList: [],
     topicAllList: [],
-    topicInfo: {}
+    topicInfo: {},
+    isRefreshing: false,
 }, action) {
     switch (action.type) {
         case REQUESTING:
-            console.log('======>>>>> requesting');
+        case RECEIVED:
             return {
                 ...state,
-                url: action.payload.url
+                url: action.payload.url,
+                isRequesting: action.payload.isRequesting,
+            };
+        case REFRESHING:
+        case REFRESHED:
+            return {
+                ...state,
+                url: action.payload.url,
+                isRefreshing: action.payload.isRefreshing,
             };
         case REQUEST_SQUARE:
             console.log('======>>>>> request_square');
@@ -55,7 +67,8 @@ function networkReducer(state = {
                 ...state,
                 url: action.payload.url,
                 topicAllList: action.payload.responseData.list,
-                topicInfo: action.payload.responseData.info
+                topicInfo: action.payload.responseData.info,
+                isRefreshing: false
             }
         case TOPIC_ALL_LOAD_MORE:
             console.log('======>>>>> topic_all_load_more');

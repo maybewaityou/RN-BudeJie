@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 
-import React from 'react';
+import React, { Component } from 'react';
 import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Color from '../../../constant/Color';
@@ -13,7 +13,8 @@ import {
     View,
     Text,
     Image,
-    ListView
+    ListView,
+    RefreshControl
 } from 'react-native';
 
 class EssenceView extends React.Component {
@@ -24,6 +25,7 @@ class EssenceView extends React.Component {
 
         this.renderRow = this.renderRow.bind(this);
         this.renderSeparator = this.renderSeparator.bind(this);
+        this.renderRefreshControl = this.renderRefreshControl.bind(this);
         this.renderFooter = this.renderFooter.bind(this);
     }
 
@@ -67,10 +69,20 @@ class EssenceView extends React.Component {
         );
     }
 
+    renderRefreshControl() {
+        return (
+            <RefreshControl
+                refreshing={this.props.isRefreshing}
+                onRefresh={this.props.onRefresh}
+                title="下拉刷新..."
+            />
+        );
+    }
+
     renderFooter() {
         return (
             <View style={{ justifyContent: 'center', alignItems: 'center', paddingBottom: 10 }}>
-                <Text style={{ fontSize: 16 }}>
+                <Text style={{ fontSize: 14 }}>
                     正在加载, 请稍后...
                 </Text>
             </View>
@@ -90,6 +102,7 @@ class EssenceView extends React.Component {
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
                     renderSeparator={this.renderSeparator}
+                    refreshControl={this.renderRefreshControl()}
                     renderFooter={this.renderFooter}
                     initialListSize={this.props.dataList.length}
                     pageSize={20}

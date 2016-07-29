@@ -16,15 +16,28 @@ import {
     REGISTER,
     REQUEST_SQUARE,
     REQUESTING,
-    RECEIVED
+    RECEIVED,
+    REFRESHING,
+    REFRESHED
 } from './ActionsType';
 
 /* ============================= Action Creator Start =============================== */
-function requestData(url) {
+function requesting(url) {
     return {
         type: REQUESTING,
         payload: {
-            url: url
+            url: url,
+            isRequesting: true
+        }
+    };
+}
+
+function received(url) {
+    return {
+        type: RECEIVED,
+        payload: {
+            url: url,
+            isRequesting: false
         }
     };
 }
@@ -39,12 +52,49 @@ function receiveData(url, type, responseData) {
     };
 }
 
-export function fetchData(subUrl, type) {
+function refreshing(url) {
+    return {
+        type: REFRESHING,
+        payload: {
+            url: url,
+            isRefreshing: true
+        }
+    };
+}
+
+function refreshed(url) {
+    return {
+        type: REFRESHED,
+        payload: {
+            url: url,
+            isRefreshing: false
+        }
+    };
+}
+
+export function refreshData(subUrl, type) {
     return dispatch => {
-        dispatch(requestData(subUrl));
+        dispatch(refreshing(subUrl));
+        dispatch(requesting(subUrl));
         return fetch(`http://api.budejie.com/api/api_open.php?${subUrl}`)
             .then(response => response.json())
-            .then(json => dispatch(receiveData(subUrl, type, json)));
+            .then(json => {
+                dispatch(refreshed(subUrl));
+                dispatch(received(subUrl));
+                dispatch(receiveData(subUrl, type, json));
+            });
+    };
+}
+
+export function fetchData(subUrl, type) {
+    return dispatch => {
+        dispatch(requesting(subUrl));
+        return fetch(`http://api.budejie.com/api/api_open.php?${subUrl}`)
+            .then(response => response.json())
+            .then(json => {
+                dispatch(received());
+                dispatch(receiveData(subUrl, type, json));
+            });
     };
 }
 

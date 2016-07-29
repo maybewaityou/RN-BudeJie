@@ -5,6 +5,8 @@
 // 网络请求
 export const REQUESTING = 'REQUESTING';
 export const RECEIVED = 'RECEIVED';
+export const REFRESHING = 'REFRESHING';
+export const REFRESHED = 'REFRESHED';
 
 // 精华页面 && 新帖页面
 export const TOPIC_ALL_REFRESH = 'TOPIC_ALL_REFRESH';

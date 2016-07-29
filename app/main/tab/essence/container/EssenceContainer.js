@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { fetchData } from '../../../../framework/redux/actions/Actions';
+import { fetchData, refreshData } from '../../../../framework/redux/actions/Actions';
 import { TOPIC_ALL_REFRESH, TOPIC_ALL_LOAD_MORE } from '../../../../framework/redux/actions/ActionsType';
 import Dimensions from 'Dimensions';
 import styles from '../../../../styles/Main';
@@ -22,7 +22,7 @@ class EssenceContainer extends Component {
 
     componentDidMount() {
         const { dispatch } = this.props;
-        dispatch(fetchData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
+        dispatch(refreshData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
     }
 
     backButtonComponent() {
@@ -36,7 +36,7 @@ class EssenceContainer extends Component {
     }
 
     render() {
-        const { dispatch, dataList, dataInfo } = this.props;
+        const { dispatch, dataList, dataInfo, isRefreshing } = this.props;
         if (dataList.length === 0) {
             return (<View />);
         }
@@ -44,6 +44,7 @@ class EssenceContainer extends Component {
             <EssenceView
                 width={width}
                 dataList={dataList}
+                isRefreshing={isRefreshing}
                 handleMorePress={(rowData) => {
                     console.log('=====>>>>> handleMorePress', rowData);
                 }}
@@ -68,8 +69,10 @@ class EssenceContainer extends Component {
                 handleCommentPress={(rowData) => {
                     console.log('=====>>>>> handleCommentPress', rowData);
                 }}
+                onRefresh={() => {
+                    dispatch(refreshData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
+                }}
                 onEndReached={() => {
-                    console.log('=====>>>>> onEndReached');
                     dispatch(fetchData(`a=list&c=data&type=${TopicType.All}&maxtime=${dataInfo.maxtime}`, TOPIC_ALL_LOAD_MORE));
                 }}
             />
@@ -80,6 +83,7 @@ class EssenceContainer extends Component {
 EssenceContainer.propTypes = {
     dataList: PropTypes.array,
     dataInfo: PropTypes.object,
+    isRefreshing: PropTypes.bool,
     dispatch: PropTypes.func.isRequired
 };
 
@@ -87,7 +91,8 @@ function mapStateToProps(state) {
     const { networkReducer } = state;
     return {
         dataList: networkReducer.topicAllList,
-        dataInfo: networkReducer.topicInfo
+        dataInfo: networkReducer.topicInfo,
+        isRefreshing: networkReducer.isRefreshing
     };
 }
 
