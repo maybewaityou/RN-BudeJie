@@ -4,6 +4,7 @@ import React from 'react';
 import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Color from '../../../constant/Color';
+import CellTopView from '../../common/cell/CellTopView';
 import {
     View,
     Text,
@@ -26,13 +27,24 @@ class EssenceView extends React.Component {
         };
 
         this.renderRow = this.renderRow.bind(this);
+        this.renderSeparator = this.renderSeparator.bind(this);
+    }
+
+    renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
+        return (
+            <View
+                key={rowID}
+                style={{ backgroundColor: Color.defaultBackgroundColor, width: this.props.width, height: 20 }}
+            />
+        );
     }
 
     renderRow(rowData) {
         return (
-            <Text>
-                Test
-            </Text>
+            <CellTopView
+                data={rowData}
+                width={this.props.width}
+            />
         );
     }
 
@@ -42,6 +54,7 @@ class EssenceView extends React.Component {
                 <ListView
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
+                    renderSeparator={this.renderSeparator}
                     initialListSize={this.props.dataList.size}
                     pageSize={20}
                     contentInset={{ bottom: 49 }}
