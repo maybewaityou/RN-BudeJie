@@ -4,7 +4,10 @@ import React from 'react';
 import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Color from '../../../constant/Color';
+import TpoicType from '../../common/cell/TopicType';
 import CellTopView from '../../common/cell/CellTopView';
+import CellCenterView from '../../common/cell/CellCenterView';
+import CellHotCommentView from '../../common/cell/CellHotCommentView';
 import CellBottomView from '../../common/cell/CellBottomView';
 import {
     View,
@@ -35,7 +38,7 @@ class EssenceView extends React.Component {
         return (
             <View
                 key={rowID}
-                style={{ backgroundColor: Color.defaultBackgroundColor, width: this.props.width, height: 20 }}
+                style={{ backgroundColor: Color.defaultBackgroundColor, width: this.props.width, height: 10 }}
             />
         );
     }
@@ -44,6 +47,14 @@ class EssenceView extends React.Component {
         return (
             <View style={{ backgroundColor: 'white' }}>
                 <CellTopView
+                    data={rowData}
+                    width={this.props.width}
+                />
+                <CellCenterView
+                    data={rowData}
+                    width={this.props.width}
+                />
+                <CellHotCommentView
                     data={rowData}
                     width={this.props.width}
                 />
