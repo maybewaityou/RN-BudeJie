@@ -4,7 +4,10 @@ var webpack = require('webpack');
 var env = process.env.NODE_ENV;
 
 var config = {
-    entry: './app/index.js',
+    entry: {
+        'index.ios': ['./index.ios.js'],
+        'index.android': ['./index.android.js']
+    },
     output: {
         publicPath: '/dist/',
         path: path.join(__dirname, 'dist'),
