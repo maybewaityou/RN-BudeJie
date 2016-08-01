@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchData, refreshData } from '../../../../framework/redux/actions/Actions';
 import { TOPIC_ALL_REFRESH, TOPIC_ALL_LOAD_MORE } from '../../../../framework/redux/actions/ActionsType';
 import Dimensions from 'Dimensions';
-import styles from '../../../../styles/Main';
+import LoadingView from '../../../components/LoadingView';
 import { BackButtonComponent } from '../../../components/title/Title';
 import EssenceView from '../view/EssenceView';
 import TopicType from '../../common/cell/TopicType';
@@ -41,11 +41,7 @@ class EssenceContainer extends Component {
         const { dispatch, dataList, dataInfo, isRefreshing } = this.props;
         if (dataList.length === 0) {
             return (
-                <View style={styles.container}>
-                    <Text style={{ fontSize: 16 }}>
-                        加载中, 请稍后...
-                    </Text>
-                </View>
+                <LoadingView />
             );
         }
         return (
