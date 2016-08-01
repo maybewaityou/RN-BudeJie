@@ -1,18 +1,18 @@
 /* jshint esversion: 6 */
 
 import React, { Component } from 'react';
-import styles from '../../../styles/Title';
 import Images from '../../constant/Images';
 import Color from '../../constant/Color';
 import Button from '../Button';
 import {
-  Text,
-  View,
-  Image,
-  TouchableOpacity
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
-class TitleLeftImage extends React.Component {
+class TitleLeftImage extends Component {
     render() {
         return (
             <Button
@@ -26,8 +26,46 @@ class TitleLeftImage extends React.Component {
     }
 }
 
+const styles = StyleSheet.create({
+    titleLayoutStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    titleStyle: {
+        color: Color.defaultTextColor,
+        fontSize: 18,
+        margin: 10,
+        fontWeight: '600',
+        justifyContent: 'center',
+        textAlign: 'center',
+        alignItems: 'center',
+    },
+    titleMainImageLayout: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 107,
+        height: 19,
+    },
+    titleBackLayout: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        marginLeft: 10,
+    },
+    titleRightStyle: {
+        color: 'white',
+        fontSize: 16,
+        margin: 10,
+        fontWeight: '600',
+        textAlign: 'center',
+        position: 'absolute',
+        right: 10,
+        bottom: -10,
+    },
+});
+
 /*=================================== Export Start =========================================*/
-export class TitleTagLeftComponent extends React.Component {
+export class TitleTagLeftComponent extends Component {
     render() {
         return (
             <TitleLeftImage
@@ -39,7 +77,7 @@ export class TitleTagLeftComponent extends React.Component {
     }
 }
 
-export class TitleFriendTrendsLeftComponent extends React.Component {
+export class TitleFriendTrendsLeftComponent extends Component {
     render() {
         return (
             <TitleLeftImage
@@ -51,7 +89,7 @@ export class TitleFriendTrendsLeftComponent extends React.Component {
     }
 }
 
-export class BackButtonComponent extends React.Component {
+export class BackButtonComponent extends Component {
     render() {
         return (
             <Button
@@ -79,7 +117,7 @@ export function backButtonComponent() {
     );
 }
 
-export class TitleImageComponent extends React.Component {
+export class TitleImageComponent extends Component {
     render() {
         return (
             <View style={styles.titleLayoutStyle}>
@@ -89,7 +127,7 @@ export class TitleImageComponent extends React.Component {
     }
 }
 
-export class TitleBarTextComponent extends React.Component {
+export class TitleBarTextComponent extends Component {
     render() {
         return (
             <View style={styles.titleLayoutStyle}>
@@ -99,7 +137,7 @@ export class TitleBarTextComponent extends React.Component {
     }
 }
 
-export class RightBarComponent extends React.Component {
+export class RightBarComponent extends Component {
     render() {
         return (
             <Text style={styles.titleRightStyle}>Right</Text>
@@ -107,7 +145,7 @@ export class RightBarComponent extends React.Component {
     }
 }
 
-export class MineRightBarComponent extends React.Component {
+export class MineRightBarComponent extends Component {
     render() {
         return (
             <View style={{ flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', position: 'absolute', right: 10, bottom: -10 }}>
