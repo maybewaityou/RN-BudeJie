@@ -21,7 +21,6 @@
     "react-native-dropdownalert": "^1.8.0",
     "react-native-extended-stylesheet": "^0.3.0",
     "react-native-parallax": "^0.3.0",
-    "react-native-progress-hud": "^1.0.4",
     "react-native-scrollable-tab-view": "^0.5.3",
     "react-native-simple-router": "^0.11.1",
     "react-redux": "^4.4.5",

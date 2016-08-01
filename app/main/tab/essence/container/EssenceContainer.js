@@ -7,6 +7,7 @@ import styles from '../../../../styles/Main';
 import { BackButtonComponent } from '../../../components/title/Title';
 import EssenceView from '../view/EssenceView';
 import TopicType from '../../common/cell/TopicType';
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 import {
     View,
     Text
@@ -48,41 +49,59 @@ class EssenceContainer extends Component {
             );
         }
         return (
-            <EssenceView
-                width={width}
-                dataList={dataList}
-                isRefreshing={isRefreshing}
-                handleMorePress={(rowData) => {
-                    console.log('=====>>>>> handleMorePress', rowData);
+            <ScrollableTabView
+                style={{ backgroundColor: '#0000',  }}
+                renderTabBar={() => <DefaultTabBar />}
+                tabBarUnderlineColor='#E3483F'
+                tabBarActiveTextColor='#E3483F'
+                tabBarBackgroundColor='#0000'
+                tabBarTextStyle={{ fontSize: 14 }}
+                onChangeTab={(i, ref) => {
+                    console.log('i == ', i);
                 }}
-                showBigPicture={(rowData) => {
-                    console.log('=====>>>>> showBigPicture', rowData);
-                }}
-                startVideo={(rowData) => {
-                    console.log('=====>>>>> startVideo', rowData);
-                }}
-                startVoice={(rowData) => {
-                    console.log('=====>>>>> startVoice', rowData);
-                }}
-                handleDingPress={(rowData) => {
-                    console.log('=====>>>>> handleDingPress', rowData);
-                }}
-                handleCaiPress={(rowData) => {
-                    console.log('=====>>>>> handleCaiPress', rowData);
-                }}
-                handleSharePress={(rowData) => {
-                    console.log('=====>>>>> handleSharePress', rowData);
-                }}
-                handleCommentPress={(rowData) => {
-                    console.log('=====>>>>> handleCommentPress', rowData);
-                }}
-                onRefresh={() => {
-                    dispatch(refreshData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
-                }}
-                onEndReached={() => {
-                    dispatch(fetchData(`a=list&c=data&type=${TopicType.All}&maxtime=${dataInfo.maxtime}`, TOPIC_ALL_LOAD_MORE));
-                }}
-            />
+            >
+                <EssenceView
+                    tabLabel='全部'
+                    width={width}
+                    dataList={dataList}
+                    isRefreshing={isRefreshing}
+                    handleMorePress={(rowData) => {
+                        console.log('=====>>>>> handleMorePress', rowData);
+                    }}
+                    showBigPicture={(rowData) => {
+                        console.log('=====>>>>> showBigPicture', rowData);
+                    }}
+                    startVideo={(rowData) => {
+                        console.log('=====>>>>> startVideo', rowData);
+                    }}
+                    startVoice={(rowData) => {
+                        console.log('=====>>>>> startVoice', rowData);
+                    }}
+                    handleDingPress={(rowData) => {
+                        console.log('=====>>>>> handleDingPress', rowData);
+                    }}
+                    handleCaiPress={(rowData) => {
+                        console.log('=====>>>>> handleCaiPress', rowData);
+                    }}
+                    handleSharePress={(rowData) => {
+                      console.log('=====>>>>> handleSharePress', rowData);
+                    }}
+                    handleCommentPress={(rowData) => {
+                        console.log('=====>>>>> handleCommentPress', rowData);
+                    }}
+                    onRefresh={() => {
+                        dispatch(refreshData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
+                    }}
+                    onEndReached={() => {
+                        dispatch(fetchData(`a=list&c=data&type=${TopicType.All}&maxtime=${dataInfo.maxtime}`, TOPIC_ALL_LOAD_MORE));
+                    }}
+                />
+                <Text tabLabel='视频'>我的</Text>
+                <Text tabLabel='音频'>音频</Text>
+                <Text tabLabel='图片'>图片</Text>
+                <Text tabLabel='段子'>段子</Text>
+            </ScrollableTabView>
+
         );
     }
 }
