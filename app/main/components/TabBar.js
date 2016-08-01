@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import configureStore from '../../framework/redux/store/Store';
-import styles from '../../styles/Main';
 import Constant from '../constant/Constant';
 import Color from '../constant/Color';
 import Images from '../constant/Images';
