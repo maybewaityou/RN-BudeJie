@@ -1,10 +1,10 @@
 /* jshint esversion: 6 */
 
 import React, { Component } from 'react';
-import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Dimensions from 'Dimensions';
 import {
+    StyleSheet,
     View,
     Text,
     Image,
@@ -22,10 +22,10 @@ class LoginButton extends React.Component {
 
     render() {
         return (
-            <View style={{ borderRadius: 10 }}>
+            <View style={styles.loginButton}>
                 <TouchableOpacity
                     activeOpacity={1}
-                    style={{marginTop: 20}}
+                    style={styles.button}
                     onPress={this.props.onPress}
                     onPressIn={() => {
                         this.setState({image: Images.loginButtonClickedBackgroundIcon});
@@ -34,13 +34,33 @@ class LoginButton extends React.Component {
                         this.setState({image: Images.loginButtonBackgroundIcon});
                     }}
                 >
-                    <Image source={{uri: this.state.image}} style={{  justifyContent: 'center', width: 266, height: 40 }}>
-                        <Text style={[styles.commonText, { color: 'white', backgroundColor: '#00000000' }]}>登录</Text>
+                    <Image source={{uri: this.state.image}} style={styles.image}>
+                        <Text style={styles.title}>登录</Text>
                     </Image>
                 </TouchableOpacity>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    loginButton: {
+        borderRadius: 10,
+    },
+    button: {
+        marginTop: 20,
+    },
+    image: {
+        justifyContent: 'center',
+        width: 266,
+        height: 40,
+    },
+    title: {
+        fontSize: 18,
+        textAlign: 'center',
+        color: 'white',
+        backgroundColor: '#0000',
+    }
+});
 
 export default LoginButton;
