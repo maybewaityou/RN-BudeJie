@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import Color from '../../constant/Color';
 import {
+    StyleSheet,
     WebView
 } from 'react-native';
 
@@ -29,10 +30,17 @@ class WebViewComponent extends Component {
                 renderError={this.props.renderError}
                 renderLoading={this.props.renderLoading}
                 startInLoadingState={this.props.startInLoadingState}
-                style={[{ flex: 1, backgroundColor: Color.defaultBackgroundColor }, this.props.style]}
+                style={[styles.webView, this.props.style]}
             />
         );
     }
 }
+
+const styles = StyleSheet.create({
+    webView: {
+        flex: 1,
+        backgroundColor: Color.defaultBackgroundColor,
+    },
+});
 
 export default WebViewComponent;
