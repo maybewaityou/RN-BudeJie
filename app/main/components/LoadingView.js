@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Color from '../../main/constant/Color';
 import {
     StyleSheet,
     View,
@@ -25,6 +26,5 @@ const styles = StyleSheet.create({
         backgroundColor: Color.defaultBackgroundColor,
     }
 });
-
 
 export default LoadingView;
