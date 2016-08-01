@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Button from '../../../components/Button';
 import {
