@@ -32,11 +32,11 @@ class EssenceView extends React.Component {
 
     renderRow(rowData) {
         return (
-                <TouchableOpacity
-                    activeOpacity={1}
-                    style={{ backgroundColor: 'white', overflow:'hidden' }}
-                    onPress={this.props.handleCellPress.bind(this, rowData)}
-                >
+            <TouchableOpacity
+                activeOpacity={1}
+                style={{ backgroundColor: 'white', overflow:'hidden' }}
+                onPress={this.props.handleCellPress.bind(this, rowData)}
+            >
                 <CellTopView
                     data={rowData}
                     width={this.props.width}
@@ -61,7 +61,7 @@ class EssenceView extends React.Component {
                     handleSharePress={this.props.handleSharePress.bind(this, rowData)}
                     handleCommentPress={this.props.handleCommentPress.bind(this, rowData)}
                 />
-                </TouchableOpacity>
+            </TouchableOpacity>
         );
     }
 
