@@ -31,6 +31,9 @@ class CommentView extends Component {
                     handleSharePress={this.props.handleSharePress.bind(this, this.props.data)}
                     handleCommentPress={this.props.handleCommentPress.bind(this, this.props.data)}
                 />
+                <View
+                    style={[styles.eparators, { width: this.props.width }]}
+                />
             </View>
         );
     }
@@ -72,11 +75,12 @@ const styles = StyleSheet.create({
         backgroundColor: Color.defaultBackgroundColor,
     },
     header: {
-        backgroundColor: 'white',
-    },
-    listView: {
 
     },
+    eparators: {
+        backgroundColor: Color.defaultBackgroundColor,
+        height: 10,
+    }
 });
 
 export default CommentView;
