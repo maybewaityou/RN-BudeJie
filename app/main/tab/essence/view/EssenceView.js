@@ -5,10 +5,7 @@ import styles from '../../../../styles/Main';
 import Images from '../../../constant/Images';
 import Color from '../../../constant/Color';
 import TpoicType from '../../common/cell/TopicType';
-import CellTopView from '../../common/cell/CellTopView';
-import CellCenterView from '../../common/cell/CellCenterView';
-import CellHotCommentView from '../../common/cell/CellHotCommentView';
-import CellBottomView from '../../common/cell/CellBottomView';
+import Cell from '../../common/cell/Cell';
 import {
     View,
     Text,
@@ -32,36 +29,19 @@ class EssenceView extends React.Component {
 
     renderRow(rowData) {
         return (
-            <TouchableOpacity
-                activeOpacity={1}
-                style={{ backgroundColor: 'white', overflow:'hidden' }}
-                onPress={this.props.handleCellPress.bind(this, rowData)}
-            >
-                <CellTopView
-                    data={rowData}
-                    width={this.props.width}
-                    onPress={this.props.handleMorePress.bind(this, rowData)}
-                />
-                <CellCenterView
-                    data={rowData}
-                    width={this.props.width}
-                    showBigPicture={this.props.showBigPicture.bind(this, rowData)}
-                    startVideo={this.props.startVideo.bind(this, rowData)}
-                    startVoice={this.props.startVoice.bind(this, rowData)}
-                />
-                <CellHotCommentView
-                    data={rowData}
-                    width={this.props.width}
-                />
-                <CellBottomView
-                    data={rowData}
-                    width={this.props.width}
-                    handleDingPress={this.props.handleDingPress.bind(this, rowData)}
-                    handleCaiPress={this.props.handleCaiPress.bind(this, rowData)}
-                    handleSharePress={this.props.handleSharePress.bind(this, rowData)}
-                    handleCommentPress={this.props.handleCommentPress.bind(this, rowData)}
-                />
-            </TouchableOpacity>
+            <Cell
+                width={this.props.width}
+                rowData={rowData}
+                handleCellPress={this.props.handleCellPress.bind(this, rowData)}
+                handleMorePress={this.props.handleMorePress.bind(this, rowData)}
+                showBigPicture={this.props.showBigPicture.bind(this, rowData)}
+                startVideo={this.props.startVideo.bind(this, rowData)}
+                startVoice={this.props.startVoice.bind(this, rowData)}
+                handleDingPress={this.props.handleDingPress.bind(this, rowData)}
+                handleCaiPress={this.props.handleCaiPress.bind(this, rowData)}
+                handleSharePress={this.props.handleSharePress.bind(this, rowData)}
+                handleCommentPress={this.props.handleCommentPress.bind(this, rowData)}
+            />
         );
     }
 

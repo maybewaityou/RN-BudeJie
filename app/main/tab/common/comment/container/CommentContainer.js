@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { fetchData } from '../../../../../framework/redux/actions';
+import { fetchData, refreshData } from '../../../../../framework/redux/actions/Actions';
+import { TOPIC_COMMENT } from '../../../../../framework/redux/actions/ActionsType';
 import Dimensions from 'Dimensions';
 import CommentView from '../view/CommentView';
+import Cell from '../../cell/Cell';
 
 const { width } = Dimensions.get('window');
 
@@ -15,13 +17,25 @@ class CommentContainer extends Component {
 
     componentDidMount() {
         const { dispatch } = this.props;
-        dispatch(fetchData());
+        dispatch(fetchData(`a=dataList&c=comment&hot=1&data_id=${this.props.data.id}`, TOPIC_COMMENT));
     }
 
     render() {
+        const { dispatch, dataList, hotList, total } = this.props;
+        if (dataList.length === 0) {
+            return (
+                <Cell
+                    rowData={this.props.data}
+                    width={width}
+                />
+            );
+        }
         return (
             <CommentView
                 data={this.props.data}
+                dataList={dataList}
+                hotList={hotList}
+                total={total}
                 width={width}
                 handleMorePress={(rowData) => {
                     console.log('=====>>>>> handleMorePress', rowData);
@@ -54,13 +68,17 @@ class CommentContainer extends Component {
 
 CommentContainer.propTypes = {
     dispatch: PropTypes.func.isRequired,
-
+    dataList: PropTypes.array,
+    hotList: PropTypes.array,
+    total: PropTypes.string
 };
 
 function mapStateToProps(state) {
     const { networkReducer } = state;
     return {
-
+        dataList: networkReducer.commentData.data,
+        hotList: networkReducer.commentData.hot,
+        total:  networkReducer.commentData.total
     };
 }
 

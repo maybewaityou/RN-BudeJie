@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Color from '../../../../constant/Color';
-import CellTopView from '../../cell/CellTopView';
-import CellCenterView from '../../cell/CellCenterView';
-import CellBottomView from '../../cell/CellBottomView';
+import Cell from '../../cell/Cell';
 import {
     StyleSheet,
     View,
@@ -14,27 +12,20 @@ class CommentView extends Component {
     constructor(props) {
         super(props);
 
+        console.log('===>>> dataList', this.props.dataList)
         this.renderHeader = this.renderHeader.bind(this);
     }
 
     renderHeader() {
         return (
             <View style={styles.header}>
-                <CellTopView
-                    data={this.props.data}
+                <Cell
+                    rowData={this.props.data}
                     width={this.props.width}
-                    onPress={this.props.handleMorePress.bind(this, this.props.data)}
-                />
-                <CellCenterView
-                    data={this.props.data}
-                    width={this.props.width}
+                    handleMorePress={this.props.handleMorePress.bind(this, this.props.data)}
                     showBigPicture={this.props.showBigPicture.bind(this, this.props.data)}
                     startVideo={this.props.startVideo.bind(this, this.props.data)}
                     startVoice={this.props.startVoice.bind(this, this.props.data)}
-                />
-                <CellBottomView
-                    data={this.props.data}
-                    width={this.props.width}
                     handleDingPress={this.props.handleDingPress.bind(this, this.props.data)}
                     handleCaiPress={this.props.handleCaiPress.bind(this, this.props.data)}
                     handleSharePress={this.props.handleSharePress.bind(this, this.props.data)}
@@ -46,8 +37,10 @@ class CommentView extends Component {
 
     renderRow(rowData) {
         return (
-            <View>
-                
+            <View style={{ backgroundColor: 'white' }}>
+                <Text>
+                    {rowData.user.username}
+                </Text>
             </View>
         );
     }

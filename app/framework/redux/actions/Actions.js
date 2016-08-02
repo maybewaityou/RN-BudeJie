@@ -18,7 +18,8 @@ import {
     REQUESTING,
     RECEIVED,
     REFRESHING,
-    REFRESHED
+    REFRESHED,
+    TOPIC_COMMENT
 } from './ActionsType';
 
 /* ============================= Action Creator Start =============================== */

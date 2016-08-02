@@ -28,7 +28,8 @@ import {
     TOPIC_VOICE_REFRESH,
     TOPIC_VOICE_LOAD_MORE,
     TOPIC_WORD_REFRESH,
-    TOPIC_WORD_LOAD_MORE
+    TOPIC_WORD_LOAD_MORE,
+    TOPIC_COMMENT
 } from '../actions/ActionsType';
 
 function networkReducer(state = {
@@ -38,6 +39,11 @@ function networkReducer(state = {
     topicAllList: [],
     topicInfo: {},
     isRefreshing: false,
+    commentData: {
+        data: [],
+        hot: [],
+        total: ''
+    }
 }, action) {
     switch (action.type) {
         case REQUESTING:
@@ -77,6 +83,17 @@ function networkReducer(state = {
                 url: action.payload.url,
                 topicAllList: [...state.topicAllList, ...action.payload.responseData.list],
                 topicInfo: action.payload.responseData.info
+            }
+        case TOPIC_COMMENT:
+            console.log('======>>>>> topic_comment');
+            return {
+                ...state,
+                url: action.payload.url,
+                commentData: {
+                    data: [...state.commentData.data, ...action.payload.responseData.data],
+                    hot: [...state.commentData.hot, ...action.payload.responseData.hot],
+                    total: action.payload.responseData.total
+                },
             }
         default:
             return state;
