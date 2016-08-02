@@ -85,6 +85,9 @@ class EssenceContainer extends Component {
                     handleCommentPress={(rowData) => {
                         console.log('=====>>>>> handleCommentPress', rowData);
                     }}
+                    handleCellPress={(rowData) => {
+                        console.log('=====>>>>> handleCellPress', rowData);
+                    }}
                     onRefresh={() => {
                         dispatch(refreshData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
                     }}

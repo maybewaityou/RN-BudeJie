@@ -14,7 +14,8 @@ import {
     Text,
     Image,
     ListView,
-    RefreshControl
+    RefreshControl,
+    TouchableOpacity
 } from 'react-native';
 
 class EssenceView extends React.Component {
@@ -31,7 +32,11 @@ class EssenceView extends React.Component {
 
     renderRow(rowData) {
         return (
-            <View style={{ backgroundColor: 'white', overflow:'hidden' }}>
+                <TouchableOpacity
+                    activeOpacity={1}
+                    style={{ backgroundColor: 'white', overflow:'hidden' }}
+                    onPress={this.props.handleCellPress.bind(this, rowData)}
+                >
                 <CellTopView
                     data={rowData}
                     width={this.props.width}
@@ -56,7 +61,7 @@ class EssenceView extends React.Component {
                     handleSharePress={this.props.handleSharePress.bind(this, rowData)}
                     handleCommentPress={this.props.handleCommentPress.bind(this, rowData)}
                 />
-            </View>
+                </TouchableOpacity>
         );
     }
 
