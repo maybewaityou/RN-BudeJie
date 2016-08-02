@@ -31,7 +31,7 @@ class CommentView extends Component {
                     handleSharePress={this.props.handleSharePress.bind(this, this.props.data)}
                     handleCommentPress={this.props.handleCommentPress.bind(this, this.props.data)}
                 />
-                <View style={[styles.eparators, { width: this.props.width }]} />
+                <View style={[styles.eparators, { width: this.props.width }]}/>
             </View>
         );
     }
