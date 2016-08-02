@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Color from '../../../constant/Color';
 import CellTopView from './CellTopView';
 import CellCenterView from './CellCenterView';
 import CellHotCommentView from './CellHotCommentView';
 import CellBottomView from './CellBottomView';
 import {
-    TouchableOpacity
+    TouchableOpacity,
+    View
 } from 'react-native';
 
 class Cell extends Component {
@@ -39,6 +41,7 @@ class Cell extends Component {
                     handleSharePress={this.props.handleSharePress}
                     handleCommentPress={this.props.handleCommentPress}
                 />
+                <View style={{ backgroundColor: Color.defaultBackgroundColor, width: this.props.width, height: 10 }} />
             </TouchableOpacity>
         );
     }

@@ -5,8 +5,13 @@ import {
     StyleSheet,
     View,
     Text,
-    ListView
+    ListView,
+    RefreshControl
 } from 'react-native';
+import {
+    LazyloadListView,
+    LazyloadView
+} from 'react-native-lazyload';
 
 class CommentView extends Component {
     constructor(props) {
@@ -38,11 +43,14 @@ class CommentView extends Component {
 
     renderRow(rowData) {
         return (
-            <View style={{ backgroundColor: 'white' }}>
+            <LazyloadView
+                host='commentList'
+                style={{ backgroundColor: 'white' }}
+            >
                 <Text>
                     {rowData.user.username}
                 </Text>
-            </View>
+            </LazyloadView>
         );
     }
 
@@ -55,10 +63,17 @@ class CommentView extends Component {
         };
         return (
             <View style={styles.container}>
-                <ListView
+                <LazyloadListView
+                    name='commentList'
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
                     renderHeader={this.renderHeader}
+                    initialListSize={this.props.dataList.length}
+                    pageSize={10}
+                    contentInset={{ bottom: 49 }}
+                    style={{ width: this.props.width }}
+                    onEndReachedThreshold={1}
+                    onEndReached={this.props.onEndReached}
                 />
             </View>
         );

@@ -9,13 +9,8 @@ import Cell from '../../cell/Cell';
 const { width } = Dimensions.get('window');
 
 class CommentContainer extends Component {
-    constructor(props) {
-        super(props);
 
-
-    }
-
-    componentDidMount() {
+    componentWillMount() {
         const { dispatch } = this.props;
         dispatch(fetchData(`a=dataList&c=comment&hot=1&data_id=${this.props.data.id}`, TOPIC_COMMENT));
     }

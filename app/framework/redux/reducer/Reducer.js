@@ -90,10 +90,10 @@ function networkReducer(state = {
                 ...state,
                 url: action.payload.url,
                 commentData: {
-                    data: [...state.commentData.data, ...action.payload.responseData.data],
-                    hot: [...state.commentData.hot, ...action.payload.responseData.hot],
+                    data: action.payload.responseData.data,
+                    hot: action.payload.responseData.hot,
                     total: action.payload.responseData.total
-                },
+                }
             }
         default:
             return state;
