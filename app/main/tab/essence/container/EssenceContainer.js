@@ -72,7 +72,6 @@ class EssenceContainer extends Component {
                         console.log('=====>>>>> handleCommentPress', rowData);
                     }}
                     handleCellPress={(rowData) => {
-                        console.log('=====>>>>> handleCellPress', rowData);
                         this.props.toRoute({
                             component: CommentContainer,
                             passProps: {
