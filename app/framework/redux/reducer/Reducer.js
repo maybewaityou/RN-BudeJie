@@ -42,7 +42,7 @@ function networkReducer(state = {
     commentData: {
         data: [],
         hot: [],
-        total: ''
+        total: 0
     }
 }, action) {
     switch (action.type) {

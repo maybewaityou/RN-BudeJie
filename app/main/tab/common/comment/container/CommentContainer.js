@@ -70,7 +70,7 @@ CommentContainer.propTypes = {
     dispatch: PropTypes.func.isRequired,
     dataList: PropTypes.array,
     hotList: PropTypes.array,
-    total: PropTypes.string
+    total: PropTypes.number
 };
 
 function mapStateToProps(state) {
