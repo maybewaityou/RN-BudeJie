@@ -4,10 +4,11 @@ import { fetchData, refreshData } from '../../../../framework/redux/actions/Acti
 import { TOPIC_ALL_REFRESH, TOPIC_ALL_LOAD_MORE } from '../../../../framework/redux/actions/ActionsType';
 import Dimensions from 'Dimensions';
 import LoadingView from '../../../components/LoadingView';
-import { BackButtonComponent } from '../../../components/title/Title';
+import { BackButtonComponent, TitleBarTextComponent } from '../../../components/title/Title';
 import EssenceView from '../view/EssenceView';
 import TopicType from '../../common/cell/TopicType';
 import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+import CommentContainer from '../../common/comment/container/CommentContainer';
 import {
     View,
     Text
@@ -16,25 +17,10 @@ import {
 const { width } = Dimensions.get('window');
 
 class EssenceContainer extends Component {
-    constructor(props) {
-        super(props);
-
-        this.backButtonComponent = this.backButtonComponent.bind(this);
-    }
 
     componentDidMount() {
         const { dispatch } = this.props;
         dispatch(refreshData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
-    }
-
-    backButtonComponent() {
-        return (
-            <BackButtonComponent
-                onPress={() => {
-                    this.props.toBack();
-                }}
-            />
-        );
     }
 
     render() {
@@ -80,13 +66,29 @@ class EssenceContainer extends Component {
                         console.log('=====>>>>> handleCaiPress', rowData);
                     }}
                     handleSharePress={(rowData) => {
-                      console.log('=====>>>>> handleSharePress', rowData);
+                        console.log('=====>>>>> handleSharePress', rowData);
                     }}
                     handleCommentPress={(rowData) => {
                         console.log('=====>>>>> handleCommentPress', rowData);
                     }}
                     handleCellPress={(rowData) => {
                         console.log('=====>>>>> handleCellPress', rowData);
+                        this.props.toRoute({
+                            component: CommentContainer,
+                            passProps: {
+                                data: rowData,
+                            },
+                            leftCorner: BackButtonComponent,
+                            leftCornerProps: {
+                                onPress: () => {
+                                    this.props.toBack();
+                                },
+                            },
+                            titleComponent: TitleBarTextComponent,
+                            titleProps: {
+                                title: '评论'
+                            }
+                        });
                     }}
                     onRefresh={() => {
                         dispatch(refreshData(`a=list&c=data&type=${TopicType.All}`, TOPIC_ALL_REFRESH));
