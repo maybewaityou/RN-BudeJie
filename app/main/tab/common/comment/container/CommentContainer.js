@@ -10,7 +10,7 @@ const { width } = Dimensions.get('window');
 
 class CommentContainer extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
         const { dispatch } = this.props;
         dispatch(fetchData(`a=dataList&c=comment&hot=1&data_id=${this.props.data.id}`, TOPIC_COMMENT));
     }

@@ -19,7 +19,8 @@ import {
     RECEIVED,
     REFRESHING,
     REFRESHED,
-    TOPIC_COMMENT
+    TOPIC_COMMENT,
+    RECOMMEND_TAG
 } from './ActionsType';
 
 /* ============================= Action Creator Start =============================== */
