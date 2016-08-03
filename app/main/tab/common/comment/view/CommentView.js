@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Color from '../../../../constant/Color';
 import Cell from '../../cell/Cell';
+import Button from '../../../../components/Button';
 import {
     StyleSheet,
     View,
     Text,
     ListView,
-    RefreshControl
+    RefreshControl,
+    Image,
+    PixelRatio
 } from 'react-native';
 import {
     LazyloadListView,
@@ -19,6 +22,7 @@ class CommentView extends Component {
 
         console.log('===>>> dataList', this.props.dataList)
         this.renderHeader = this.renderHeader.bind(this);
+        this.renderSeparator = this.renderSeparator.bind(this);
     }
 
     renderHeader() {
@@ -45,12 +49,39 @@ class CommentView extends Component {
         return (
             <LazyloadView
                 host='commentList'
-                style={{ backgroundColor: 'white' }}
+                style={{ backgroundColor: 'white', flexDirection: 'row' }}
             >
-                <Text>
-                    {rowData.user.username}
-                </Text>
+                <Image source={{uri: rowData.user.profile_image}} style={styles.cellHeaderImage} />
+                <View style={{ marginTop: 10, marginBottom: 10 }}>
+                    <View style={styles.cellUserName}>
+                        <Image source={{uri: (rowData.user.sex === 'm' ? 'Profile_manIcon' : 'Profile_womanIcon')}} style={styles.cellSexImage} />
+                        <Text style={styles.userName}>{rowData.user.username}</Text>
+                    </View>
+                    <View style={styles.cellContent}>
+                        <Text style={styles.content}>{rowData.content}</Text>
+                    </View>
+                </View>
+                <Button
+                    isVertical={true}
+                    leftImage='commentLikeButton'
+                    highlightLeftImage='commentLikeButtonClick'
+                    leftImageStyle={styles.likeImage}
+                    title={rowData.like_count}
+                    titleColor={Color.defaultTextColor}
+                    highlightTitleColor='red'
+                    titleStyle={styles.likeText}
+                    style={styles.like}
+                />
             </LazyloadView>
+        );
+    }
+
+    renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
+        return (
+            <View
+                key={rowID}
+                style={styles.separators}
+            />
         );
     }
 
@@ -68,6 +99,7 @@ class CommentView extends Component {
                     dataSource={this.state.dataSource}
                     renderRow={this.renderRow}
                     renderHeader={this.renderHeader}
+                    renderSeparator={this.renderSeparator}
                     initialListSize={this.props.dataList.length}
                     pageSize={10}
                     contentInset={{ bottom: 49 }}
@@ -90,9 +122,49 @@ const styles = StyleSheet.create({
     header: {
 
     },
-    eparators: {
+    separators: {
         backgroundColor: Color.defaultBackgroundColor,
-        height: 10,
+        height: 1 / PixelRatio.get(),
+    },
+    cellHeaderImage: {
+        borderRadius: 25,
+        width: 50,
+        height: 50,
+        margin: 10,
+    },
+    cellSexImage: {
+        width: 13,
+        height: 13,
+    },
+    cellUserName: {
+        flexDirection: 'row',
+        flex: 1,
+        alignItems: 'center'
+    },
+    userName: {
+        fontSize: 16,
+        marginLeft: 5,
+    },
+    cellContent: {
+        flex: 1,
+    },
+    content: {
+        fontSize: 16,
+        width: 280,
+    },
+    likeImage: {
+        width: 18,
+        height: 18,
+    },
+    likeText: {
+        fontSize: 14,
+        textAlign: 'center',
+        marginTop: 5,
+    },
+    like: {
+        position: 'absolute',
+        top: 10,
+        right: 10,
     }
 });
 
