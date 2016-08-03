@@ -21,7 +21,6 @@ export const TOPIC_WORD_REFRESH = 'TOPIC_WORD_REFRESH';
 export const TOPIC_WORD_LOAD_MORE = 'TOPIC_WORD_LOAD_MORE';
 export const TOPIC_COMMENT = 'TOPIC_COMMENT';
 
-export const RECOMMEND_TAG = 'RECOMMEND_TAG';
 export const GO_TO_TAG = 'GO_TO_TAG';
 
 
