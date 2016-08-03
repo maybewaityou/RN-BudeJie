@@ -36,6 +36,7 @@ class CommentView extends Component {
                     handleSharePress={this.props.handleSharePress.bind(this, this.props.data)}
                     handleCommentPress={this.props.handleCommentPress.bind(this, this.props.data)}
                 />
+            <Text style={{ fontSize: 16, margin: 10, marginTop: -5, marginBottom: 5 }}>最新评论</Text>
             </View>
         );
     }
